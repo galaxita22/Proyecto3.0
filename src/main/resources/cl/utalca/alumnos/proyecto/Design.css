@@ -1,0 +1,30 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #c94b2f, #8b2f94);
+    /*
+    la funcion que se encuentra comentada es para crearle bordes a la ventana
+    -fx-background-radius: 15 15 25 25;
+    */
+}
+.root2 {
+    -fx-background-color: linear-gradient(to bottom right, #ff8800, rgb(255, 65, 0));
+    /*
+    la funcion que se encuentra comentada es para crearle bordes a la ventana
+    -fx-background-radius: 15 15 25 25;
+    */
+}
+
+.root3 {
+    -fx-background-color: linear-gradient(to bottom right, #ff0000, rgb(171, 12, 12));
+    /*
+    la funcion que se encuentra comentada es para crearle bordes a la ventana
+    -fx-background-radius: 15 15 25 25;
+    */
+}
+
+.root4 {
+    -fx-background-color: linear-gradient(to bottom right, #ffff00, #ff4400);
+    /*
+    la funcion que se encuentra comentada es para crearle bordes a la ventana
+    -fx-background-radius: 15 15 25 25;
+    */
+}
