@@ -144,7 +144,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="132.0" prefWidth="51.0" styleClass="root2" text="Sen" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="132.0" prefWidth="51.0" styleClass="root2" text="Sin" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

@@ -196,7 +196,7 @@
             <Font name="Consolas Bold" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="701.0" layoutY="38.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" text="Cambio de base">
+      <Button layoutX="701.0" layoutY="38.0" mnemonicParsing="false" onAction="#ClickCambioBase" prefHeight="30.0" prefWidth="123.0" text="Cambio de base">
          <font>
             <Font name="Consolas" size="13.0" />
          </font>

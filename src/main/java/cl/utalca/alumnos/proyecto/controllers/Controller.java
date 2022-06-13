@@ -4,6 +4,7 @@ import cl.utalca.alumnos.proyecto.Main;
 import cl.utalca.alumnos.proyecto.controllers.helper.Division;
 import cl.utalca.alumnos.proyecto.controllers.helper.ReDraw;
 import cl.utalca.alumnos.proyecto.functions.Coords.Coords;
+import cl.utalca.alumnos.proyecto.functions.Draw;
 import cl.utalca.alumnos.proyecto.functions.numbers.Numbers;
 import cl.utalca.alumnos.proyecto.functions.operators.Operators;
 import javafx.event.ActionEvent;
@@ -28,6 +29,7 @@ public class Controller implements Initializable {
 	private TextField textInput;
 	public int statusA = 2, statusB = 2, statusParentesis = 0, statusC;
 	public ArrayList<String> text = new ArrayList<>();
+	public ArrayList<String> textBin = new ArrayList<>();
 
 	@FXML
 	private ColorPicker ColorPickerNumber;
@@ -44,6 +46,7 @@ public class Controller implements Initializable {
 	private GraphicsContext gc;
 	private GraphicsContext gcCoordenadas;
 	private int ContCoord = 0;
+	private int Base = 0;
 
 	@FXML
 	Button Standard;
@@ -57,6 +60,7 @@ public class Controller implements Initializable {
 		gc.clearRect(0, 0, 515, 313);
 		gcCoordenadas.clearRect(0, 0, 515, 313);
 		ContCoord = 0;
+		Base = 0;
 		posX = 0;
 		posY = 0;
 		text.clear();
@@ -81,6 +85,44 @@ public class Controller implements Initializable {
 			if (text.size() == 0) {
 				gcCoordenadas.clearRect(0, 0, 515, 313);
 			}
+		}
+	}
+
+	public void ClickCambioBase(ActionEvent cambioBase) {
+		if (Base == 0) {
+			posX = 0;
+			//Integer.toBinaryString();
+			int n = 0;
+			int entero = 0;
+			for (int i = text.size()-1; i >= 0; i--) {
+				if (text.equals("+") || text.equals("-") || text.equals("*") || text.equals("/") || text.equals("(") || text.equals(")")) {
+					n = 0;
+					String enteroBin = Integer.toBinaryString(entero);
+					entero = 0;
+				}
+				else {
+					entero+=Integer.parseInt(text.get(i))*Math.pow(10,n);
+					n++;
+				}
+			}
+			for (int i = 0; i < text.size(); i++) {
+				String bin = Integer.toBinaryString(Integer.parseInt(text.get(i)));
+				String[] binArray = bin.split("(?<=.)");
+				for (int j = 0; j < binArray.length; j++) {
+					System.out.println(binArray[j]);
+				}
+				gc.clearRect(0, 0, 515, 313);
+				for (int j = 0; j < binArray.length; j++) {
+					Numbers.draw(Integer.parseInt(binArray[j]), gc, posX, posY);
+					posX += 30;
+				}
+				Base++;
+			}
+		} else {
+			gc.clearRect(0, 0, 515, 313);
+			posX = 0;
+			ReDraw.reDraw(text, gc, posX, posY);
+			Base = 0;
 		}
 	}
 
@@ -222,13 +264,13 @@ public class Controller implements Initializable {
 				case "/" -> {
 					int posX2 = posX;
 					Division.dibujaDivision(text, gc, posX, posY);
-                    posY +=60;
+					posY += 60;
 					this.posX = Division.dibujaDivision(text, gc, posX, posY);
 					System.out.println(posX);
-					}
 				}
 			}
 		}
+	}
 
 	public void ClickPrimerParentesis(ActionEvent par) {
 		String parentesis = ((Button) par.getSource()).getText();
