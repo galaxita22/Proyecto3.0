@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="848.0" styleClass="root" stylesheets="@../../../../cl/utalca/alumnos/proyecto/Design.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.utalca.alumnos.proyecto.controllers.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="848.0" styleClass="root" stylesheets="@../../../../cl/utalca/alumnos/proyecto/Design.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.utalca.alumnos.proyecto.controllers.Controller">
     <children>
         <TextField fx:id="textInput" layoutX="31.0" layoutY="109.0" prefHeight="0.0" prefWidth="168.0" AnchorPane.bottomAnchor="300.6" AnchorPane.topAnchor="109.0">
             <font>
@@ -88,7 +88,7 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-                <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="52.0" prefWidth="90.0" styleClass="root4" text="-" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="52.0" prefWidth="90.0" styleClass="root4" text="-" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
                     <font>
                         <Font name="System Bold" size="20.0" />
                     </font>

@@ -104,11 +104,12 @@ public class Controller implements Initializable {
 		Controller.setColorOp(ColorPickerOperator.getValue());
 		Color test2 = ColorPickerOperator.getValue();
 		System.out.println(test2);
-
+		int posXAux = posX;
 		posX = 0;
 		posY = 0;
 
 		ReDraw.reDraw(text, gc, posX, posY);
+		posX = posXAux;
 	}
 
 	public static void setColorNum(Color colorNumber) {//setter de color de numeros
@@ -137,6 +138,7 @@ public class Controller implements Initializable {
 				ContCoord++;}
 				else{
 					posX+=30;
+					ContCoord++;
 				}
 			}
 		} else {
@@ -206,6 +208,7 @@ public class Controller implements Initializable {
 			}
 		}
 	}
+
 	public void ClickTrigonometrica(ActionEvent trig){
 		String operador = ((Button) trig.getSource()).getText();
 		textInput.setText(textInput.getText() + operador);
@@ -225,8 +228,17 @@ public class Controller implements Initializable {
 				Operators.draw("Tan", gc, posX, posY);
 				posX+=90;
 			}
+			case "-" -> {
+				Operators.draw("-", gc, posX, posY);
+				posX += 30;
+			}
+			case "x!" -> {
+				Operators.draw("x!", gc, posX, posY);
+				posX += 15;
+			}
 		}
 	}
+
 	public void ClickOperadores(ActionEvent oper) {
 		if (statusA != 2 ) {
 			String operador = ((Button) oper.getSource()).getText();
@@ -239,10 +251,6 @@ public class Controller implements Initializable {
 					Operators.draw("+", gc, posX, posY);
 					posX += 30;
 				}
-				case "-" -> {
-					Operators.draw("-", gc, posX, posY);
-					posX += 30;
-				}
 				case "*" -> {
 					Operators.draw("*", gc, posX, posY);
 					posX += 30;
@@ -253,6 +261,11 @@ public class Controller implements Initializable {
 					posY += 60;
 					this.posX = Division.dibujaDivision(text, gc, posX, posY);
 					System.out.println(posX);
+
+				}
+				case "°" -> {
+					Operators.draw("°", gc, posX, posY);
+					posX +=15;
 				}
 
 				}

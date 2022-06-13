@@ -99,6 +99,10 @@ public class Coords {
                 String[] coords9N = {"sA 58.5 138.5 3 3 0 360 OPEN", "sA 58.5 118.5 3 3 0 360 OPEN", "sA 73.5 138.5 3 3 0 360 OPEN", "sA 73.5 118.5 3 3 0 360 OPEN"};
                 drawOper(gcCoordenadas, posX, posY, coords9N);
             }
+            case "x!" -> {
+                String[] coordsFacL = {"sA 7.5 97.5 5 5 0 360 OPEN", "sA 7.5 131.5 5 5 0 360 OPEN","sA 7.5 140 5 5 0 360 OPEN"};
+                drawOper(gcCoordenadas, posX, posY, coordsFacL);
+            }
             default -> {
             }
         }
