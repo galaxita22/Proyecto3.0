@@ -91,6 +91,11 @@ public class Coords {
                 String[] coords8S = {"sA 67.5 118.5 3 3 0 360 OPEN", "sA 53.5 118.5 3 3 0 360 OPEN", "sA 53.5 128.5 3 3 0 360 OPEN", "sA 67.5 128.5 3 3 0 360 OPEN", "sA 67.5 138.5 3 3 0 360 OPEN","sA 53.5 138.5 3 3 0 360 OPEN"};
                 drawOper(gcCoordenadas, posX, posY, coords8S);
             }
+            case "Tan" -> {
+                String[] coords9T = {};
+                String[] coords9A = {};
+                String[] coords9N = {};
+            }
             default -> {
             }
         }
