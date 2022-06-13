@@ -15,7 +15,7 @@ public class Operators extends Draw {
 				drawOper(gc, posX, posY, coords2);
 			}
 			case "*" -> {
-				String[] coords3 = {"lT 20 117.5", "lT 25 122.5", "lT 25 117.5", "lT 20 122.5"};
+				String[] coords3 = {"lT 20 117.5", "lT 25 122.5", "mT 25 117.5", "lT 20 122.5"};
 				drawOper(gc, posX, posY, coords3);
 			}
 			case "/" -> {
@@ -29,6 +29,27 @@ public class Operators extends Draw {
 			case ")" -> {
 				String[] coords6 = {"mT 30 100", "sA 15 95 10 50 270 180 OPEN"};
 				drawOper(gc, posX, posY, coords6);
+			}
+			case "Sin" -> {
+				String[] coords7 = {"mT 30 120", "lT 15 120", "lT 15 130", "lT 30 130", "lT 30 140", "lT 15 140", "mT 40 120", "lT 40 140", "mT 50 140", "lT 50 120", "lT 65 140", "lT 65 120"};
+				drawNum(gc, posX, posY, coords7);
+				posX+=60;
+				String[] coords7A = {"mT 30 100", "sA 15 95 10 50 90 180 OPEN"};
+				drawOper(gc, posX, posY, coords7A);
+			}
+			case "Cos" -> {
+				String[] coords8 = {"mT 30 120", "lT 17 120", "lT 17 140", "lT 30 140", "mT 35 140", "lT 35 120", "lT 50 120", "lT 50 140", "lT 35 140", "mT 70 120", "lT 55 120", "lT 55 130", "lT 70 130", "lT 70 140", "lT 55 140"};
+				drawNum(gc, posX, posY, coords8);
+				posX+=60;
+				String[] coords8A = {"mT 30 100", "sA 15 95 10 50 90 180 OPEN"};
+				drawOper(gc, posX, posY, coords8A);
+			}
+			case "Tan" -> {
+				String[] coords9 = {"mT 10 120", "lT 30 120", "mT 20 115", "lT 20 140", "mt 35 140", "lT 45 120", "lT 55 140", "mT 50 130", "lT 40 130", "mT 60 140", "lT 60 120", "lT 75 140", "lT 75 120"};
+				drawNum(gc, posX, posY, coords9);
+				posX+=70;
+				String[] coords9A = {"mT 30 100", "sA 15 95 10 50 90 180 OPEN"};
+				drawOper(gc, posX, posY, coords9A);
 			}
 			default -> {
 			}

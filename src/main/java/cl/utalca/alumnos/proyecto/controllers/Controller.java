@@ -86,10 +86,12 @@ public class Controller implements Initializable {
 
 	public void ClickCambioCientifica(ActionEvent cambioescena) throws IOException {
 		Main.cambiarEscena("Scientific");
+		posX =0;
 	}
 
 	public void ClickCambioEstandar(ActionEvent cambioescena) throws IOException {
 		Main.cambiarEscena("Standard");
+		posX=0;
 	}
 
 	public void ClickCambioColor(ActionEvent cambiocolor) {
@@ -128,8 +130,12 @@ public class Controller implements Initializable {
 			posX = 0;
 			for (int i = 0; i < text.size(); i++) {
 				Coords.DrawCoord(text.get(i), gcCoordenadas, posX, posY);
-				posX += 30;
-				ContCoord++;
+				if (text.get(i).equals("Sin") || text.get(i).equals("Cos") || text.get(i).equals("Tan")){
+				posX += 80;
+				ContCoord++;}
+				else{
+					posX+=30;
+				}
 			}
 		} else {
 			gcCoordenadas.clearRect(0, 0, 515, 313);
@@ -222,10 +228,22 @@ public class Controller implements Initializable {
 				case "/" -> {
 					int posX2 = posX;
 					Division.dibujaDivision(text, gc, posX, posY);
-                    posY +=60;
+					posY += 60;
 					this.posX = Division.dibujaDivision(text, gc, posX, posY);
 					System.out.println(posX);
-					}
+				}
+				case "Sin" -> {
+					Operators.draw("Sin", gc, posX, posY);
+					posX+=80;
+				}
+				case "Cos" -> {
+					Operators.draw("Cos", gc, posX, posY);
+					posX+=80;
+				}
+				case "Tan" -> {
+					Operators.draw("Tan", gc, posX, posY);
+					posX+=90;
+				}
 				}
 			}
 		}

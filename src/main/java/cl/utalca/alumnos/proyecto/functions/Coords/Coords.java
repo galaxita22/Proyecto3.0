@@ -23,7 +23,7 @@ public class Coords {
                 drawOper(gcCoordenadas, posX, posY, coords3);
             }
             case "4" -> {
-                String[] coords4 = {"sA 7.5 97.5 5 5 0 360 OPEN","sA 7.5 177.5 5 5 0 360 OPEN", "sA 27.5 117.5 5 5 0 360 OPEN", "sA 27.5 97.5 5 5 0 360 OPEN", "sA 27.5 137.5 5 5 0 360 OPEN"};
+                String[] coords4 = {"sA 7.5 97.5 5 5 0 360 OPEN","sA 7.5 117.5 5 5 0 360 OPEN", "sA 27.5 117.5 5 5 0 360 OPEN", "sA 27.5 97.5 5 5 0 360 OPEN", "sA 27.5 137.5 5 5 0 360 OPEN"};
                 drawOper(gcCoordenadas, posX, posY, coords4);
             }
             case "5" -> {
@@ -74,6 +74,14 @@ public class Coords {
             case ")" -> {
                 String[] coords6 = {"mT 30 100", "sA 15 95 10 50 280 180 OPEN"};
                 drawOper(gcCoordenadas, posX, posY, coords6);
+            }
+            case "Sin" -> {
+                String[] coords7S = {"sA 27.5 118.5 3 3 0 360 OPEN","sA 13.5 118.5 3 3 0 360 OPEN","sA 13.5 128.5 3 3 0 360 OPEN", "sA 27.5 128.5 3 3 0 360 OPEN","sA 27.5 138.5 3 3 0 360 OPEN", "sA 13.5 138.5 3 3 0 360 OPEN" };
+                drawOper(gcCoordenadas, posX, posY, coords7S);
+                String[] coords7I = {"sA 38.5 118.5 3 3 0 360 OPEN","sA 38.5 137.5 3 3 0 360 OPEN" };
+                drawOper(gcCoordenadas, posX, posY, coords7I);
+                String[] coords7N = {"sA 48.5 138.5 3 3 0 360 OPEN","sA 48.5 118.5 3 3 0 360 OPEN","sA 63.5 138.5 3 3 0 360 OPEN","sA 63.5 118.5 3 3 0 360 OPEN" };
+                drawOper(gcCoordenadas, posX, posY, coords7N);
             }
             default -> {
             }

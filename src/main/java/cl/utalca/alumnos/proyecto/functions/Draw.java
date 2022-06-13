@@ -41,8 +41,8 @@ public class Draw {
         // sA AA BB -> strokeArc(AA,BB,CC,DD,EE,FF,TYPE)
 
         for (String operator : operators) {
-            double start = Double.parseDouble(operator.split(" ")[1]) + posX; //->AA
-            double end = Double.parseDouble(operator.split(" ")[2]); //->BB
+            double start = Double.parseDouble(operator.split(" ")[1]) + posX ; //->AA
+            double end = Double.parseDouble(operator.split(" ")[2]) ; //->BB
 
             if (operator.contains("lT")) {
                 gc.lineTo(start, end);
