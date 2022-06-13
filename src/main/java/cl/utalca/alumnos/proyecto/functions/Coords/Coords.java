@@ -83,6 +83,14 @@ public class Coords {
                 String[] coords7N = {"sA 48.5 138.5 3 3 0 360 OPEN","sA 48.5 118.5 3 3 0 360 OPEN","sA 63.5 138.5 3 3 0 360 OPEN","sA 63.5 118.5 3 3 0 360 OPEN" };
                 drawOper(gcCoordenadas, posX, posY, coords7N);
             }
+            case "Cos" -> {
+                String[] coords8C = {"sA 27.5 118.5 3 3 0 360 OPEN", "sA 15.5 118.5 3 3 0 360 OPEN", "sA 15.5 138.5 3 3 0 360 OPEN", "sA 27.5 138.5 3 3 0 360 OPEN"};
+                drawOper(gcCoordenadas, posX, posY, coords8C);
+                String[] coords8O = {"sA 33.5 138.5 3 3 0 360 OPEN", "sA 33.5 118.5 3 3 0 360 OPEN", "sA 47.5 118.5 3 3 0 360 OPEN", "sA 47.5 138.5 3 3 0 360 OPEN"};
+                drawOper(gcCoordenadas, posX, posY, coords8O);
+                String[] coords8S = {"sA 67.5 118.5 3 3 0 360 OPEN", "sA 53.5 118.5 3 3 0 360 OPEN", "sA 53.5 128.5 3 3 0 360 OPEN", "sA 67.5 128.5 3 3 0 360 OPEN", "sA 67.5 138.5 3 3 0 360 OPEN","sA 53.5 138.5 3 3 0 360 OPEN"};
+                drawOper(gcCoordenadas, posX, posY, coords8S);
+            }
             default -> {
             }
         }
