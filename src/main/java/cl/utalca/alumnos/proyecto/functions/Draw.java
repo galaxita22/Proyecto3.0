@@ -32,7 +32,7 @@ public class Draw {
         gc.stroke();
     }
 
-    public static void drawOper(GraphicsContext gc, int posX, String[] operators) {
+    public static void drawOper(GraphicsContext gc, int posX, int posY, String[] operators) {
         gc.beginPath();
         Color color = Controller.getColorOp();
 
