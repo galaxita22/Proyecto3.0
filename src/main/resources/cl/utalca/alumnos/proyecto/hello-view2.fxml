@@ -144,21 +144,21 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="132.0" prefWidth="51.0" styleClass="root2" text="Sin" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="132.0" prefWidth="51.0" styleClass="root2" text="Sin" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="126.0" prefWidth="51.0" styleClass="root2" text="Cos" textFill="WHITE" GridPane.columnIndex="1">
+            <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="126.0" prefWidth="51.0" styleClass="root2" text="Cos" textFill="WHITE" GridPane.columnIndex="1">
                <font>
                   <Font name="Consolas Bold" size="14.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="96.0" prefWidth="51.0" styleClass="root2" text="Tan" textFill="WHITE" GridPane.columnIndex="2">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="96.0" prefWidth="51.0" styleClass="root2" text="Tan" textFill="WHITE" GridPane.columnIndex="2">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

@@ -26,8 +26,10 @@ public class Controller implements Initializable {
 
 	@FXML
 	private TextField textInput;
-	public int statusA = 2, statusB = 2, statusParentesis = 0, statusC;
+	public int statusA = 2, statusB = 2, statusParentesis = 0;
 	public ArrayList<String> text = new ArrayList<>();
+	//StatusA = evitar poner 2 operadores seguidos
+	//StatusB = auxiliar de A
 
 	@FXML
 	private ColorPicker ColorPickerNumber;
@@ -204,9 +206,29 @@ public class Controller implements Initializable {
 			}
 		}
 	}
+	public void ClickTrigonometrica(ActionEvent trig){
+		String operador = ((Button) trig.getSource()).getText();
+		textInput.setText(textInput.getText() + operador);
+		text.add(operador);
+		statusParentesis ++;
 
+		switch(operador){
+			case "Sin" -> {
+				Operators.draw("Sin", gc, posX, posY);
+				posX+=80;
+			}
+			case "Cos" -> {
+				Operators.draw("Cos", gc, posX, posY);
+				posX+=80;
+			}
+			case "Tan" -> {
+				Operators.draw("Tan", gc, posX, posY);
+				posX+=90;
+			}
+		}
+	}
 	public void ClickOperadores(ActionEvent oper) {
-		if (statusA != 2) {
+		if (statusA != 2 ) {
 			String operador = ((Button) oper.getSource()).getText();
 			textInput.setText(textInput.getText() + operador);
 			text.add(operador);
@@ -232,18 +254,7 @@ public class Controller implements Initializable {
 					this.posX = Division.dibujaDivision(text, gc, posX, posY);
 					System.out.println(posX);
 				}
-				case "Sin" -> {
-					Operators.draw("Sin", gc, posX, posY);
-					posX+=80;
-				}
-				case "Cos" -> {
-					Operators.draw("Cos", gc, posX, posY);
-					posX+=80;
-				}
-				case "Tan" -> {
-					Operators.draw("Tan", gc, posX, posY);
-					posX+=90;
-				}
+
 				}
 			}
 		}

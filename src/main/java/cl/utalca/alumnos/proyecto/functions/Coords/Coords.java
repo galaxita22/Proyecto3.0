@@ -92,9 +92,12 @@ public class Coords {
                 drawOper(gcCoordenadas, posX, posY, coords8S);
             }
             case "Tan" -> {
-                String[] coords9T = {};
-                String[] coords9A = {};
-                String[] coords9N = {};
+                String[] coords9T = {"sA 8.5 118.5 3 3 0 360 OPEN", "sA 27.5 118.5 3 3 0 360 OPEN", "sA 18.5 113.5 3 3 0 360 OPEN", "sA 18.5 138.5 3 3 0 360 OPEN"};
+                drawOper(gcCoordenadas, posX, posY, coords9T);
+                String[] coords9A = {"sA 33.5 138.5 3 3 0 360 OPEN", "sA 43.5 118.5 3 3 0 360 OPEN", "sA 53.5 138.5 3 3 0 360 OPEN", "sA 48.5 128.5 3 3 0 360 OPEN", "sA 38.5 128.5 3 3 0 360 OPEN"};
+                drawOper(gcCoordenadas, posX, posY, coords9A);
+                String[] coords9N = {"sA 58.5 138.5 3 3 0 360 OPEN", "sA 58.5 118.5 3 3 0 360 OPEN", "sA 73.5 138.5 3 3 0 360 OPEN", "sA 73.5 118.5 3 3 0 360 OPEN"};
+                drawOper(gcCoordenadas, posX, posY, coords9N);
             }
             default -> {
             }
