@@ -10,13 +10,13 @@ public class Draw {
 
     /*dibujos para num y oper
 //    la altura está entre 100 y 140*/
-    public static double size, sizeY;
-    public static void setSize(double size) {
-        Draw.size = size;
-    }
-    public static void setSizeY(double sizeY) {
-        Draw.sizeY = sizeY;
-    }
+//    public static double size, sizeY;
+//    public static void setSize(double size) {
+//        Draw.size = size;
+//    }
+//    public static void setSizeY(double sizeY) {
+//        Draw.sizeY = sizeY;
+//    }
 
     public static void drawNum(GraphicsContext gc, int posX, int posY, String[] numbers) {
         gc.beginPath();
@@ -25,8 +25,8 @@ public class Draw {
         // lT AA BB -> lineTo(AA,BB)
         // mT AA BB -> moveTo(AA,BB)
         for (String number : numbers) {
-            double start = Integer.parseInt(number.split(" ")[1])*size + posX*size;
-            double end = Integer.parseInt(number.split(" ")[2])*size + posY;
+            double start = Integer.parseInt(number.split(" ")[1]) + posX;
+            double end = Integer.parseInt(number.split(" ")[2]) + posY;
 
             if (number.contains("lT")) {
                 gc.lineTo(start, end);
@@ -48,8 +48,8 @@ public class Draw {
         // sA AA BB -> strokeArc(AA,BB,CC,DD,EE,FF,TYPE)
 
         for (String operator : operators) {
-            double start = Double.parseDouble(operator.split(" ")[1])*size + posX*size; //->AA
-            double end = Double.parseDouble(operator.split(" ")[2])*size; //->BB
+            double start = Double.parseDouble(operator.split(" ")[1]) + posX; //->AA
+            double end = Double.parseDouble(operator.split(" ")[2]); //->BB
 
             if (operator.contains("lT")) {
                 gc.lineTo(start, end);

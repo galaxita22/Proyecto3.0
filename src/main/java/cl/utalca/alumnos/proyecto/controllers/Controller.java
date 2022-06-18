@@ -148,35 +148,35 @@ public class Controller implements Initializable {
 	}
 
 	public void ClickSize(ActionEvent size){
-		this.size = ((Button) size.getSource()).getText();
-		switch (this.size) {
-			case "MP":
-				Draw.setSize(0.25);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-			case "P":
-				Draw.setSize(0.5);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-			case "G":
-				Draw.setSize(1.25);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-			case "MG":
-				Draw.setSize(1.5);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-			default:
-				Draw.setSize(1);
-				Draw.setSizeY(1);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-		}
+//		this.size = ((Button) size.getSource()).getText();
+//		switch (this.size) {
+//			case "MP":
+//				Draw.setSize(0.25);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//			case "P":
+//				Draw.setSize(0.5);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//			case "G":
+//				Draw.setSize(1.25);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//			case "MG":
+//				Draw.setSize(1.5);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//			default:
+//				Draw.setSize(1);
+//				Draw.setSizeY(0);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//		}
 	}
 
 	public void ClickCambioCientifica(ActionEvent cambioescena) throws IOException {
@@ -254,34 +254,34 @@ public class Controller implements Initializable {
 				Operators.draw("/", gc, posX, posY+60);
 			}
 		}
-		switch (this.size) {
-			case "MP":
-				Draw.setSize(0.25);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-			case "P":
-				Draw.setSize(0.5);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-			case "G":
-				Draw.setSize(1.25);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-			case "MG":
-				Draw.setSize(1.5);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-			default:
-				Draw.setSize(1);
-				Draw.setSizeY(1);
-				gc.clearRect(0, 0, 515, 313);
-				ReDraw.reDraw(text, gc, 0, posY);
-				break;
-		}
+//		switch (this.size) {
+//			case "MP":
+//				Draw.setSize(0.25);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//			case "P":
+//				Draw.setSize(0.5);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//			case "G":
+//				Draw.setSize(1.25);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//			case "MG":
+//				Draw.setSize(1.5);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//			default:
+//				Draw.setSize(1);
+//				Draw.setSizeY(1);
+//				gc.clearRect(0, 0, 515, 313);
+//				ReDraw.reDraw(text, gc, 0, posY);
+//				break;
+//		}
 		switch (numero) {
 			case "1" -> {
 				Numbers.draw(1, gc, posX, posY);
@@ -377,33 +377,24 @@ public class Controller implements Initializable {
 			statusB = statusA;
 			statusA = 2;
 
-			/*switch (operador) {
-				case "+" -> {
-
-					posY = 0;
-				}
-				case "*" -> {
-					posY= 0;
-				}
-			}*/
-			switch (this.size) {
-				case "MP":
-					Draw.setSize(1/4);
-					break;
-				case "P":
-					Draw.setSize(0.5);
-					break;
-				case "G":
-					Draw.setSize(1.25);
-					break;
-				case "MG":
-					Draw.setSize(1.5);
-					break;
-				default:
-					Draw.setSize(1);
-					Draw.setSizeY(1);
-					break;
-			}
+//			switch (this.size) {
+//				case "MP":
+//					Draw.setSize(1/4);
+//					break;
+//				case "P":
+//					Draw.setSize(0.5);
+//					break;
+//				case "G":
+//					Draw.setSize(1.25);
+//					break;
+//				case "MG":
+//					Draw.setSize(1.5);
+//					break;
+//				default:
+//					Draw.setSize(1);
+//					Draw.setSizeY(1);
+//					break;
+//			}
 			switch (operador) {
 				case "+" -> {
 					Operators.draw("+", gc, posX, posY);
