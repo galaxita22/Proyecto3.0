@@ -26,7 +26,7 @@ public class Controller implements Initializable {
 
 	@FXML
 	private TextField textInput;
-	public int statusA = 2, statusB = 2, statusParentesis = 0, posXDenominador;
+	public int statusA = 2, statusB = 2, statusParentesis = 0, posXDenominador, posXNumerador;
 	public ArrayList<String> text = new ArrayList<>();
 	//StatusA = evitar poner 2 operadores seguidos
 	//StatusB = auxiliar de A
@@ -155,6 +155,13 @@ public class Controller implements Initializable {
 		statusB = statusA;
 		statusA = 1;
 
+		if(posY != 0){
+			posXDenominador +=30;
+			if(posXDenominador > posXNumerador){
+				Operators.draw("/", gc, posX, posY +60);
+			}
+		}
+
 		switch (numero) {
 			case "1" -> {
 				Numbers.draw(1, gc, posX, posY);
@@ -249,16 +256,29 @@ public class Controller implements Initializable {
 			text.add(operador);
 			statusB = statusA;
 			statusA = 2;
+
+			/*switch (operador) {
+				case "+" -> {
+
+					posY = 0;
+				}
+				case "*" -> {
+					posY= 0;
+				}
+			}*/
+
 			switch (operador) {
 				case "+" -> {
 					Operators.draw("+", gc, posX, posY);
 					posX += 30;
 					posY = 0;
+
 				}
 				case "*" -> {
 					Operators.draw("*", gc, posX, posY);
 					posX += 30;
-					posY=0;
+					posY = 0;
+
 				}
 				case "/" -> {
 					posXDenominador = posX;
@@ -267,15 +287,18 @@ public class Controller implements Initializable {
 					this.posX = Division.dibujaDivision(text, gc, posX, posY);//this.posX = posX2; se utiliza para que el operador se dibuje en la misma linea que la division
 					System.out.println(posX);
 					int posXNumerador = posX;
-
-
+					posXNumerador =posXDenominador - posXNumerador;
 				}
 				case "°" -> {
 					Operators.draw("°", gc, posX, posY);
 					posX +=15;
 				}
-
-
+			}
+		}
+			if(posY > 0){
+			posXDenominador +=30;
+				if(posXDenominador > posXNumerador){
+					Operators.draw("/", gc, posX, posY +60);
 				}
 			}
 		}
