@@ -26,7 +26,7 @@ public class Controller implements Initializable {
 
 	@FXML
 	private TextField textInput;
-	public int statusA = 2, statusB = 2, statusParentesis = 0, posXDenominador, posXNumerador;
+	public int statusA = 2, statusB = 2, statusParentesis = 0, posXDenominador, posXNumerador, PAdiv, PCdiv;
 	public ArrayList<String> text = new ArrayList<>();
 	//StatusA = evitar poner 2 operadores seguidos
 	//StatusB = auxiliar de A
