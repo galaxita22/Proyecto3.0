@@ -10,6 +10,7 @@ public class Division {
 		int PA = 0, PC = 0;
 		int posXAux = posX;
 
+
 		if (text.get(i-1).equals(")")) {//comienza el  conteo de parentesis para saber donde empezar a dibujar
 			posX -= 30;
 			i--;
@@ -49,7 +50,7 @@ public class Division {
 					posXAux = posX;
 					System.out.println("A");
 					for (int j = i + 1; j < text.size() - 1; j++) {
-						Operators.draw("/", gc, posX, posY);
+						Operators.draw("/", gc, posX, posY );
 						posX += 30;
 					}
 					break;

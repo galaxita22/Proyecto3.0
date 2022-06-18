@@ -42,7 +42,7 @@ public class Draw {
 
         for (String operator : operators) {
             double start = Double.parseDouble(operator.split(" ")[1]) + posX ; //->AA
-            double end = Double.parseDouble(operator.split(" ")[2]) ; //->BB
+            double end = Double.parseDouble(operator.split(" ")[2])  ; //->BB
 
             if (operator.contains("lT")) {
                 gc.lineTo(start, end);
