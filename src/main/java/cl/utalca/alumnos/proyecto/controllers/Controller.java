@@ -113,7 +113,7 @@ public class Controller implements Initializable {
 				}
 
 				//Si encontramos un operador en el índice del contador
-				if (text.get(textosize).matches("\\+")) { //TODO: Comparar a más operadores
+				if (text.get(textosize).matches("\\+|-|\\*|/")) { //TODO: Comparar a más operadores
 					//Se imprime primero el número que está antes del operador
 					String num = Integer.toBinaryString(Integer.parseInt(builder.toString()));
 
