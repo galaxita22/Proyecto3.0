@@ -29,7 +29,6 @@ public class Controller implements Initializable {
 	private TextField textInput;
 	public int statusA = 2, statusB = 2, statusParentesis = 0, posXDenominador, posXNumerador, PAdiv, PCdiv;
 	public ArrayList<String> text = new ArrayList<>();
-	public ArrayList<String> textBin = new ArrayList<>();
 	//StatusA = evitar poner 2 operadores seguidos
 	//StatusB = auxiliar de A
 
@@ -63,6 +62,7 @@ public class Controller implements Initializable {
 		gc.clearRect(0, 0, 515, 313);
 		gcCoordenadas.clearRect(0, 0, 515, 313);
 		ContCoord = 0;
+		Base = 0;
 		posX = 0;
 		posY = 0;
 		text.clear();
@@ -78,9 +78,11 @@ public class Controller implements Initializable {
 			text.remove(text.size() - 1);
 			gc.clearRect(0, 0, 515, 313);
 
+			posX = 0;
 			posY = 0;
-			posX -= 30;
-			ReDraw.reDraw(text, gc, 0, posY);
+
+
+			ReDraw.reDraw(text, gc, posX, posY);
 
 			if (text.size() == 0) {
 				gcCoordenadas.clearRect(0, 0, 515, 313);
@@ -113,7 +115,7 @@ public class Controller implements Initializable {
 				}
 
 				//Si encontramos un operador en el índice del contador
-				if (text.get(textosize).matches("\\+|-|\\*|/")) { //TODO: Comparar a más operadores
+				if (text.get(textosize).matches("\\+|-|\\*|/|")) { //TODO: Comparar a más operadores
 					//Se imprime primero el número que está antes del operador
 					String num = Integer.toBinaryString(Integer.parseInt(builder.toString()));
 
@@ -147,6 +149,34 @@ public class Controller implements Initializable {
 
 	public void ClickSize(ActionEvent size){
 		this.size = ((Button) size.getSource()).getText();
+		switch (this.size) {
+			case "MP":
+				Draw.setSize(0.25);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+			case "P":
+				Draw.setSize(0.5);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+			case "G":
+				Draw.setSize(1.25);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+			case "MG":
+				Draw.setSize(1.5);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+			default:
+				Draw.setSize(1);
+				Draw.setSizeY(1);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+		}
 	}
 
 	public void ClickCambioCientifica(ActionEvent cambioescena) throws IOException {
@@ -217,76 +247,86 @@ public class Controller implements Initializable {
 		text.add(numero);
 		statusB = statusA;
 		statusA = 1;
-		switch (this.size) {
-			case "MP":
-				Draw.setSize(0.25);
-				break;
-			case "P":
-				Draw.setSize(0.5);
-				break;
-			case "G":
-				Draw.setSize(1.25);
-				break;
-			case "MG":
-				Draw.setSize(1.5);
-				break;
-			default:
-				Draw.setSize(1);
-				break;
-		}
 
 		if(posY != 0){
 			posXDenominador +=30;
 			if(posXDenominador > posXNumerador){
-				Operators.draw("/", gc, posX, posY +60);
+				Operators.draw("/", gc, posX, posY+60);
 			}
 		}
-
+		switch (this.size) {
+			case "MP":
+				Draw.setSize(0.25);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+			case "P":
+				Draw.setSize(0.5);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+			case "G":
+				Draw.setSize(1.25);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+			case "MG":
+				Draw.setSize(1.5);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+			default:
+				Draw.setSize(1);
+				Draw.setSizeY(1);
+				gc.clearRect(0, 0, 515, 313);
+				ReDraw.reDraw(text, gc, 0, posY);
+				break;
+		}
 		switch (numero) {
 			case "1" -> {
 				Numbers.draw(1, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "2" -> {
 				Numbers.draw(2, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "3" -> {
 				Numbers.draw(3, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "4" -> {
 				Numbers.draw(4, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "5" -> {
 				Numbers.draw(5, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "6" -> {
 				Numbers.draw(6, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "7" -> {
 				Numbers.draw(7, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "8" -> {
 				Numbers.draw(8, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "9" -> {
 				Numbers.draw(9, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			default -> {
 				if (posY != 60) {
@@ -348,7 +388,7 @@ public class Controller implements Initializable {
 			}*/
 			switch (this.size) {
 				case "MP":
-					Draw.setSize(0.25);
+					Draw.setSize(1/4);
 					break;
 				case "P":
 					Draw.setSize(0.5);
@@ -361,9 +401,9 @@ public class Controller implements Initializable {
 					break;
 				default:
 					Draw.setSize(1);
+					Draw.setSizeY(1);
 					break;
 			}
-
 			switch (operador) {
 				case "+" -> {
 					Operators.draw("+", gc, posX, posY);

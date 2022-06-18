@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="848.0" styleClass="root" stylesheets="@../../../../cl/utalca/alumnos/proyecto/Design.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.utalca.alumnos.proyecto.controllers.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="848.0" styleClass="root" stylesheets="@../../../../cl/utalca/alumnos/proyecto/Design.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.utalca.alumnos.proyecto.controllers.Controller">
     <children>
         <TextField fx:id="textInput" layoutX="31.0" layoutY="109.0" prefHeight="0.0" prefWidth="168.0" AnchorPane.bottomAnchor="300.6" AnchorPane.topAnchor="109.0">
             <font>
@@ -196,7 +196,7 @@
             <Font name="Consolas Bold" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="701.0" layoutY="38.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" text="Cambio de base">
+      <Button layoutX="701.0" layoutY="38.0" mnemonicParsing="false" onAction="#ClickCambioBase" prefHeight="30.0" prefWidth="123.0" text="Cambio de base">
          <font>
             <Font name="Consolas" size="13.0" />
          </font>

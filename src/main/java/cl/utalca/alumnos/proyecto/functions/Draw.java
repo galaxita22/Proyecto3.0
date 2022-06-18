@@ -9,7 +9,7 @@ public class Draw {
     //private static final int[] valores = {0,30,60,90,120,150,180,210,240,270};
 
     /*dibujos para num y oper
-    la altura está entre 100 y 140*/
+//    la altura está entre 100 y 140*/
     public static double size, sizeY;
     public static void setSize(double size) {
         Draw.size = size;
@@ -26,7 +26,7 @@ public class Draw {
         // mT AA BB -> moveTo(AA,BB)
         for (String number : numbers) {
             double start = Integer.parseInt(number.split(" ")[1])*size + posX*size;
-            double end = Integer.parseInt(number.split(" ")[2])*size + posY*sizeY;
+            double end = Integer.parseInt(number.split(" ")[2])*size + posY;
 
             if (number.contains("lT")) {
                 gc.lineTo(start, end);
@@ -49,7 +49,7 @@ public class Draw {
 
         for (String operator : operators) {
             double start = Double.parseDouble(operator.split(" ")[1])*size + posX*size; //->AA
-            double end = Double.parseDouble(operator.split(" ")[2])*size + posY*sizeY; //->BB
+            double end = Double.parseDouble(operator.split(" ")[2])*size; //->BB
 
             if (operator.contains("lT")) {
                 gc.lineTo(start, end);

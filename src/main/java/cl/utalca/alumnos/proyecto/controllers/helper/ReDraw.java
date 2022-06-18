@@ -11,9 +11,15 @@ import java.util.Objects;
 public class ReDraw {
 	public static void reDraw(ArrayList<String> text, GraphicsContext gc, int posX, int posY) {
 		for (int i = 0; i < text.size(); i++) {
-			if (Objects.equals(text.get(i), "+") || Objects.equals(text.get(i), "-") || Objects.equals(text.get(i), "*") || Objects.equals(text.get(i), "/") || Objects.equals(text.get(i), "(") || Objects.equals(text.get(i), ")")) {
+			if (Objects.equals(text.get(i), "+") || Objects.equals(text.get(i), "-") || Objects.equals(text.get(i), "*") || Objects.equals(text.get(i), "(") || Objects.equals(text.get(i), ")")||Objects.equals(text.get(i), "Cos")||Objects.equals(text.get(i), "Sin")||Objects.equals(text.get(i), "Tan")||Objects.equals(text.get(i), "^")) {
 				Operators.draw(text.get(i), gc, posX, posY);
-			} else {
+			}
+			else if (Objects.equals(text.get(i), "/")) {
+				Division.dibujaDivision(text, gc, posX, posY);
+				posY+= 60;
+				Division.dibujaDivision(text, gc, posX, posY);
+			}
+			else {
 				int num = Integer.parseInt(text.get(i));
 				Numbers.draw(num, gc, posX, posY);
 			}

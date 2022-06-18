@@ -11,7 +11,7 @@ public class Division {
 		int posXAux = posX;
 
 
-		if (text.get(i-1).equals(")")) {//comienza el  conteo de parentesis para saber donde empezar a dibujar
+		if (text.get(i-1).equals(")")) {//comienza el conteo de parentesis para saber donde empezar a dibujar
 			posX -= 30;
 			i--;
 			while(i>=0){
