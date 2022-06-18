@@ -130,14 +130,14 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="53.0" prefWidth="52.0" styleClass="root2" text="x!" textFill="WHITE" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="53.0" prefWidth="52.0" styleClass="root2" text="!" textFill="WHITE" GridPane.rowIndex="2">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
                   <Font name="Consolas Bold" size="20.0" />
                </font></Button>
-            <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="136.0" prefWidth="51.0" styleClass="root2" text="xʸ" textFill="WHITE" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="136.0" prefWidth="51.0" styleClass="root2" text="^" textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

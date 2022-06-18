@@ -10,7 +10,7 @@ public class Division {
 		int PA = 0, PC = 0;
 		int posXAux = posX;
 
-		if (text.get(i-1).equals(")")) {
+		if (text.get(i-1).equals(")")) {//comienza el  conteo de parentesis para saber donde empezar a dibujar
 			posX -= 30;
 			i--;
 			while(i>=0){
@@ -20,8 +20,8 @@ public class Division {
 					posX -= 30;
 				}
 				if (text.get(i).equals("(")) {
-					PA++;
-					if (PA == PC) {
+					PA++;//aumenta la variable de parentesis abierto
+					if (PA == PC) {// si pa
 						posXAux = posX;
 
 						System.out.println(posXAux);
@@ -42,10 +42,11 @@ public class Division {
 				posX -= 30;
 			}
 		}
-		else{
+		else{ 
 			while (i >= 0) {
 				if (text.get(i).equals("+") || text.get(i).equals("-") || text.get(i).equals("*")) {
 					posX += 30;
+					posXAux = posX;
 					System.out.println("A");
 					for (int j = i + 1; j < text.size() - 1; j++) {
 						Operators.draw("/", gc, posX, posY);
@@ -55,6 +56,7 @@ public class Division {
 				}
 				if (i == 0) {
 					posX = 0;
+					posXAux = posX;
 					for (int j = 0; j < text.size() - 1; j++) {
 						Operators.draw("/", gc, posX, posY);
 						posX += 30;

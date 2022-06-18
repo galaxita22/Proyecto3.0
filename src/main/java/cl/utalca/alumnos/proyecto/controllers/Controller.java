@@ -26,7 +26,7 @@ public class Controller implements Initializable {
 
 	@FXML
 	private TextField textInput;
-	public int statusA = 2, statusB = 2, statusParentesis = 0;
+	public int statusA = 2, statusB = 2, statusParentesis = 0, posXDenominador;
 	public ArrayList<String> text = new ArrayList<>();
 	//StatusA = evitar poner 2 operadores seguidos
 	//StatusB = auxiliar de A
@@ -139,6 +139,7 @@ public class Controller implements Initializable {
 				else{
 					posX+=30;
 					ContCoord++;
+
 				}
 			}
 		} else {
@@ -158,47 +159,47 @@ public class Controller implements Initializable {
 			case "1" -> {
 				Numbers.draw(1, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "2" -> {
 				Numbers.draw(2, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "3" -> {
 				Numbers.draw(3, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "4" -> {
 				Numbers.draw(4, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "5" -> {
 				Numbers.draw(5, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "6" -> {
 				Numbers.draw(6, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "7" -> {
 				Numbers.draw(7, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "8" -> {
 				Numbers.draw(8, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			case "9" -> {
 				Numbers.draw(9, gc, posX, posY);
 				posX += 30;
-				posY = 0;
+
 			}
 			default -> {
 				if (posY != 60) {
@@ -231,10 +232,12 @@ public class Controller implements Initializable {
 			case "-" -> {
 				Operators.draw("-", gc, posX, posY);
 				posX += 30;
+				posY = 0;
 			}
-			case "x!" -> {
+			case "!" -> {
 				Operators.draw("x!", gc, posX, posY);
 				posX += 15;
+				posY = 0;
 			}
 		}
 	}
@@ -250,23 +253,28 @@ public class Controller implements Initializable {
 				case "+" -> {
 					Operators.draw("+", gc, posX, posY);
 					posX += 30;
+					posY = 0;
 				}
 				case "*" -> {
 					Operators.draw("*", gc, posX, posY);
 					posX += 30;
+					posY=0;
 				}
 				case "/" -> {
-					int posX2 = posX;
+					posXDenominador = posX;
 					Division.dibujaDivision(text, gc, posX, posY);
 					posY += 60;
-					this.posX = Division.dibujaDivision(text, gc, posX, posY);
+					this.posX = Division.dibujaDivision(text, gc, posX, posY);//this.posX = posX2; se utiliza para que el operador se dibuje en la misma linea que la division
 					System.out.println(posX);
+					int posXNumerador = posX;
+
 
 				}
 				case "°" -> {
 					Operators.draw("°", gc, posX, posY);
 					posX +=15;
 				}
+
 
 				}
 			}
