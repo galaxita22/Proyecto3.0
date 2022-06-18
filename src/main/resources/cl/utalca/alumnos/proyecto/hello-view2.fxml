@@ -237,5 +237,16 @@
          <font>
             <Font name="Consolas Bold" size="15.0" />
          </font></Label>
+        <Button layoutX="701.0" layoutY="38.0" mnemonicParsing="false" onAction="#ClickCambioBase" prefHeight="30.0" prefWidth="118.0" text="Cambio de base" AnchorPane.bottomAnchor="364.0">
+            <font>
+                <Font name="Consolas" size="13.0" />
+            </font>
+        </Button>
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="MP" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="390.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="P" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="340.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="N" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="290.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="G" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="240.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="MG" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="190.0" />
     </children>
 </AnchorPane>
+

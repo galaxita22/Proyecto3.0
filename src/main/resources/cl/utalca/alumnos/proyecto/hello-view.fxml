@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="848.0" styleClass="root" stylesheets="@../../../../cl/utalca/alumnos/proyecto/Design.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.utalca.alumnos.proyecto.controllers.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="848.0" styleClass="root" stylesheets="@../../../../cl/utalca/alumnos/proyecto/Design.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.utalca.alumnos.proyecto.controllers.Controller">
     <children>
         <TextField fx:id="textInput" layoutX="31.0" layoutY="109.0" prefHeight="0.0" prefWidth="168.0" AnchorPane.bottomAnchor="300.6" AnchorPane.topAnchor="109.0">
             <font>
@@ -29,7 +29,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
                 <Button mnemonicParsing="false" onAction="#ClickNumero" prefHeight="58.0" prefWidth="63.0" style="-fx-background-color: #5b5b5b;" text="1" textFill="WHITE" GridPane.rowIndex="1">
@@ -88,7 +88,7 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-                <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="52.0" prefWidth="90.0" styleClass="root4" text="-" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="52.0" prefWidth="90.0" styleClass="root4" text="-" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
                     <font>
                         <Font name="System Bold" size="20.0" />
                     </font>
@@ -130,7 +130,7 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-            </Button>
+                </Button>
                 <Button mnemonicParsing="false" onAction="#ClickSegundoParentesis" prefHeight="52.0" prefWidth="132.0" style="-fx-background-color: #7b7b7b;" text=")" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
                     <font>
                         <Font name="System Bold" size="20.0" />
@@ -138,7 +138,7 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-            </Button>
+                </Button>
                 <Button mnemonicParsing="false" onAction="#ClickPrimerParentesis" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: #7b7b7b;" text="(" textFill="WHITE" GridPane.rowIndex="4">
                     <font>
                         <Font name="System Bold" size="20.0" />
@@ -146,12 +146,12 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-            </Button>
+                </Button>
             </children>
         </GridPane>
         <Pane layoutX="303.0" layoutY="75.0" prefHeight="315.0" prefWidth="522.0" style="-fx-background-color: #ffffff;" AnchorPane.topAnchor="75.0">
             <children>
-            <Canvas id="canvasCoordenadas" fx:id="canvasCoordenadas" height="315.0" layoutX="3.0" layoutY="1.0" width="515.0" />
+                <Canvas id="canvasCoordenadas" fx:id="canvasCoordenadas" height="315.0" layoutX="3.0" layoutY="1.0" width="515.0" />
                 <Canvas id="canvas" fx:id="canvas" height="315.0" layoutX="3.0" layoutY="1.0" style="-fx-background-color: #bcbcbc;" width="515.0">
                     <effect>
                         <Glow />
@@ -165,41 +165,46 @@
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
-      </Button>
-      <Button layoutX="303.0" layoutY="38.0" mnemonicParsing="false" onAction="#ClickCoordenadas" prefHeight="30.0" prefWidth="64.0" text="Coords" AnchorPane.topAnchor="38.0">
-         <font>
-            <Font name="Consolas" size="12.0" />
-         </font></Button>
-      <Button fx:id="Scientific" layoutX="50.0" layoutY="42.0" mnemonicParsing="false" onAction="#ClickCambioCientifica" prefHeight="30.0" prefWidth="87.0" text="Scientific" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="751.0" AnchorPane.topAnchor="10.0">
-         <font>
-            <Font name="Consolas" size="12.0" />
-         </font></Button>
-      <ColorPicker fx:id="ColorPickerNumber" editable="true" layoutX="146.0" layoutY="75.0" onAction="#ClickCambioColor" prefHeight="30.0" prefWidth="106.0" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="146.0" AnchorPane.rightAnchor="596.0" AnchorPane.topAnchor="75.0">
-         <value>
-            <Color />
-         </value></ColorPicker>
-      <Button layoutX="199.0" layoutY="109.0" mnemonicParsing="false" onAction="#ClickBorrar" prefHeight="30.0" prefWidth="56.0" styleClass="root3" text="DEL" textFill="WHITE" AnchorPane.bottomAnchor="300.6" AnchorPane.topAnchor="109.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <ColorPicker fx:id="ColorPickerOperator" editable="true" layoutX="31.0" layoutY="75.0" onAction="#ClickCambioColor" prefHeight="30.0" prefWidth="106.0" promptText="Operators" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="711.0" AnchorPane.topAnchor="75.0">
-         <value>
-            <Color />
-         </value></ColorPicker>
-      <Label alignment="CENTER" layoutX="145.0" layoutY="56.0" prefHeight="18.0" prefWidth="106.0" text="Números" textFill="WHITE" AnchorPane.bottomAnchor="365.6" AnchorPane.rightAnchor="596.6">
-         <font>
-            <Font name="Consolas Bold" size="15.0" />
-         </font></Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="56.0" prefHeight="18.0" prefWidth="106.0" text="Operadores" textFill="WHITE" AnchorPane.bottomAnchor="365.6">
-         <font>
-            <Font name="Consolas Bold" size="15.0" />
-         </font>
-      </Label>
-      <Button layoutX="701.0" layoutY="38.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" text="Cambio de base">
-         <font>
-            <Font name="Consolas" size="13.0" />
-         </font>
-      </Button>
+        </Button>
+        <Button layoutX="303.0" layoutY="38.0" mnemonicParsing="false" onAction="#ClickCoordenadas" prefHeight="30.0" prefWidth="64.0" text="Coord." AnchorPane.bottomAnchor="372.6" AnchorPane.rightAnchor="481.0">
+            <font>
+                <Font name="Consolas" size="12.0" />
+            </font></Button>
+        <Button fx:id="Scientific" layoutX="50.0" layoutY="42.0" mnemonicParsing="false" onAction="#ClickCambioCientifica" prefHeight="30.0" prefWidth="87.0" text="Scientific" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="751.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font name="Consolas" size="12.0" />
+            </font></Button>
+        <ColorPicker fx:id="ColorPickerNumber" editable="true" layoutX="146.0" layoutY="67.0" onAction="#ClickCambioColor" prefHeight="38.0" prefWidth="106.0" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="146.0" AnchorPane.rightAnchor="596.0" AnchorPane.topAnchor="75.0">
+            <value>
+                <Color />
+            </value></ColorPicker>
+        <Button layoutX="199.0" layoutY="109.0" mnemonicParsing="false" onAction="#ClickBorrar" prefHeight="30.0" prefWidth="56.0" styleClass="root3" text="DEL" textFill="WHITE" AnchorPane.bottomAnchor="300.6" AnchorPane.topAnchor="109.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ColorPicker fx:id="ColorPickerOperator" editable="true" layoutX="31.0" layoutY="75.0" onAction="#ClickCambioColor" prefHeight="30.0" prefWidth="106.0" promptText="Operators" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="711.0" AnchorPane.topAnchor="75.0">
+            <value>
+                <Color />
+            </value></ColorPicker>
+        <Label alignment="CENTER" layoutX="145.0" layoutY="56.0" prefHeight="18.0" prefWidth="106.0" text="Números" textFill="WHITE" AnchorPane.bottomAnchor="365.6" AnchorPane.rightAnchor="596.6">
+            <font>
+                <Font name="Consolas Bold" size="15.0" />
+            </font></Label>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="56.0" prefHeight="18.0" prefWidth="106.0" text="Operadores" textFill="WHITE" AnchorPane.bottomAnchor="365.6">
+            <font>
+                <Font name="Consolas Bold" size="15.0" />
+            </font>
+        </Label>
+        <Button layoutX="701.0" layoutY="38.0" mnemonicParsing="false" onAction="#ClickCambioBase" prefHeight="30.0" prefWidth="123.0" text="Cambio de base" AnchorPane.bottomAnchor="372.6">
+            <font>
+                <Font name="Consolas" size="13.0" />
+            </font>
+        </Button>
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="MP" AnchorPane.rightAnchor="390.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="P" AnchorPane.rightAnchor="340.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="N" AnchorPane.rightAnchor="290.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="G" AnchorPane.rightAnchor="240.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="MG" AnchorPane.rightAnchor="190.0" />
     </children>
 </AnchorPane>

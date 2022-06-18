@@ -4,6 +4,7 @@ import cl.utalca.alumnos.proyecto.Main;
 import cl.utalca.alumnos.proyecto.controllers.helper.Division;
 import cl.utalca.alumnos.proyecto.controllers.helper.ReDraw;
 import cl.utalca.alumnos.proyecto.functions.Coords.Coords;
+import cl.utalca.alumnos.proyecto.functions.Draw;
 import cl.utalca.alumnos.proyecto.functions.numbers.Numbers;
 import cl.utalca.alumnos.proyecto.functions.operators.Operators;
 import javafx.event.ActionEvent;
@@ -28,6 +29,7 @@ public class Controller implements Initializable {
 	private TextField textInput;
 	public int statusA = 2, statusB = 2, statusParentesis = 0, posXDenominador, posXNumerador, PAdiv, PCdiv;
 	public ArrayList<String> text = new ArrayList<>();
+	public ArrayList<String> textBin = new ArrayList<>();
 	//StatusA = evitar poner 2 operadores seguidos
 	//StatusB = auxiliar de A
 
@@ -46,6 +48,8 @@ public class Controller implements Initializable {
 	private GraphicsContext gc;
 	private GraphicsContext gcCoordenadas;
 	private int ContCoord = 0;
+	private int Base = 0;
+	private String size = "N";
 
 	@FXML
 	Button Standard;
@@ -74,16 +78,75 @@ public class Controller implements Initializable {
 			text.remove(text.size() - 1);
 			gc.clearRect(0, 0, 515, 313);
 
-			posX = 0;
 			posY = 0;
-
-
-			ReDraw.reDraw(text, gc, posX, posY);
+			posX -= 30;
+			ReDraw.reDraw(text, gc, 0, posY);
 
 			if (text.size() == 0) {
 				gcCoordenadas.clearRect(0, 0, 515, 313);
 			}
 		}
+	}
+
+	public void ClickCambioBase(ActionEvent cambioBase) {
+		if (Base == 0) {
+			//Si se apreta el botón, el canvas se borra
+			gc.clearRect(0, 0, 515, 313);
+
+			posX = 0;
+			int textosize = 0;
+			StringBuilder builder = new StringBuilder();
+
+			//Mientras la variable contador sea menor o igual al tamaño del array texto
+			while (textosize <= text.size()) {
+				//Si el siguiente index del contador es mayor al tamaño del array imprime lo último guardado del stringbuilder
+				if (textosize + 1 > text.size()) {
+					String num = Integer.toBinaryString(Integer.parseInt(builder.toString()));
+
+					for (int i = 0; i < num.length(); i++) {
+						Numbers.draw(Integer.parseInt(String.valueOf(num.charAt(i))), gc, posX, posY);
+						posX += 30;
+					}
+					//Aumentamos la base pues no hay nada mas para transformar
+					Base++;
+					return;
+				}
+
+				//Si encontramos un operador en el índice del contador
+				if (text.get(textosize).matches("\\+")) { //TODO: Comparar a más operadores
+					//Se imprime primero el número que está antes del operador
+					String num = Integer.toBinaryString(Integer.parseInt(builder.toString()));
+
+					for (int i = 0; i < num.length(); i++) {
+						Numbers.draw(Integer.parseInt(String.valueOf(num.charAt(i))), gc, posX, posY);
+						posX += 30;
+					}
+					//Se imprime el operador
+					Operators.draw(text.get(textosize), gc, posX, posY);
+					posX += 30;
+					//Reiniciamos el stringBuilder pues no ha terminado de escanear
+					builder = new StringBuilder("");
+				}
+
+				//Si el indice del array coincide con un dígito (\\d) entonces lo agregamos al stringBuilder
+				if (text.get(textosize).matches("\\d")) {
+					builder.append(text.get(textosize));
+				}
+
+				textosize++;
+			}
+		} else {
+			int posXAux = posX;
+			gc.clearRect(0, 0, 515, 313);
+			posX = 0;
+			ReDraw.reDraw(text, gc, posX, posY);
+			posX = posXAux;
+			Base = 0;
+		}
+	}
+
+	public void ClickSize(ActionEvent size){
+		this.size = ((Button) size.getSource()).getText();
 	}
 
 	public void ClickCambioCientifica(ActionEvent cambioescena) throws IOException {
@@ -154,6 +217,23 @@ public class Controller implements Initializable {
 		text.add(numero);
 		statusB = statusA;
 		statusA = 1;
+		switch (this.size) {
+			case "MP":
+				Draw.setSize(0.25);
+				break;
+			case "P":
+				Draw.setSize(0.5);
+				break;
+			case "G":
+				Draw.setSize(1.25);
+				break;
+			case "MG":
+				Draw.setSize(1.5);
+				break;
+			default:
+				Draw.setSize(1);
+				break;
+		}
 
 		if(posY != 0){
 			posXDenominador +=30;
@@ -166,47 +246,47 @@ public class Controller implements Initializable {
 			case "1" -> {
 				Numbers.draw(1, gc, posX, posY);
 				posX += 30;
-
+				posY = 0;
 			}
 			case "2" -> {
 				Numbers.draw(2, gc, posX, posY);
 				posX += 30;
-
+				posY = 0;
 			}
 			case "3" -> {
 				Numbers.draw(3, gc, posX, posY);
 				posX += 30;
-
+				posY = 0;
 			}
 			case "4" -> {
 				Numbers.draw(4, gc, posX, posY);
 				posX += 30;
-
+				posY = 0;
 			}
 			case "5" -> {
 				Numbers.draw(5, gc, posX, posY);
 				posX += 30;
-
+				posY = 0;
 			}
 			case "6" -> {
 				Numbers.draw(6, gc, posX, posY);
 				posX += 30;
-
+				posY = 0;
 			}
 			case "7" -> {
 				Numbers.draw(7, gc, posX, posY);
 				posX += 30;
-
+				posY = 0;
 			}
 			case "8" -> {
 				Numbers.draw(8, gc, posX, posY);
 				posX += 30;
-
+				posY = 0;
 			}
 			case "9" -> {
 				Numbers.draw(9, gc, posX, posY);
 				posX += 30;
-
+				posY = 0;
 			}
 			default -> {
 				if (posY != 60) {
@@ -266,6 +346,23 @@ public class Controller implements Initializable {
 					posY= 0;
 				}
 			}*/
+			switch (this.size) {
+				case "MP":
+					Draw.setSize(0.25);
+					break;
+				case "P":
+					Draw.setSize(0.5);
+					break;
+				case "G":
+					Draw.setSize(1.25);
+					break;
+				case "MG":
+					Draw.setSize(1.5);
+					break;
+				default:
+					Draw.setSize(1);
+					break;
+			}
 
 			switch (operador) {
 				case "+" -> {
