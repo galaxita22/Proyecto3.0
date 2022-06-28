@@ -28,3 +28,10 @@
     -fx-background-radius: 15 15 25 25;
     */
 }
+.root5 {
+    -fx-background-color: linear-gradient(to bottom right, #0077ff, #00ffd9);
+    /*
+    la funcion que se encuentra comentada es para crearle bordes a la ventana
+    -fx-background-radius: 15 15 25 25;
+    */
+}

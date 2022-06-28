@@ -20,6 +20,7 @@ import javafx.scene.paint.Color;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -54,6 +55,25 @@ public class Controller implements Initializable {
 	Button Standard;
 	@FXML
 	Button Scientific;
+
+	public void ClickDraw(ActionEvent draw){
+		String Dibuja = textInput.getText();
+		ArrayList<String> Dibuja2 = new ArrayList<>();
+		for (int i = 0; i <= Dibuja.length(); i++) {
+			if (Dibuja.substring(i, i+1).equals("C")){
+				Dibuja2.add("Cos");
+				text.add("Cos");
+				i += 3;
+			}
+			else{
+				Dibuja2.add(Dibuja.substring(i, i+1));
+				text.add(Dibuja.substring(i, i+1));
+			}
+
+			ReDraw.reDraw(Dibuja2, gc, 0, posY);
+		}
+		System.out.println(Dibuja2);
+	}
 
 	public void ClickBorrarTodo(ActionEvent borratodo) {
 		textInput.setText("");
@@ -351,6 +371,7 @@ public class Controller implements Initializable {
 			case "Cos" -> {
 				Operators.draw("Cos", gc, posX, posY);
 				posX+=80;
+				System.out.println(text);
 			}
 			case "Tan" -> {
 				Operators.draw("Tan", gc, posX, posY);

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JIGSAW</ID>
+  <OriginalElement>cl.utalca.alumnos.proyecto</OriginalElement>
+  <nodes>
+    <node x="120.99999999999997" y="0.0">cl.utalca.alumnos.proyecto</node>
+    <node x="29.53623188405794" y="243.0">javafx.base</node>
+    <node x="112.28623188405794" y="326.0">java.desktop</node>
+    <node x="181.24999999999997" y="160.0">javafx.graphics</node>
+    <node x="0.0" y="79.0">javafx.controls</node>
+    <node x="556.0" y="160.0">java.scripting</node>
+    <node x="261.0" y="79.0">javafx.fxml</node>
+    <node x="241.99999999999997" y="409.0">java.prefs</node>
+    <node x="162.53623188405794" y="490.0">java.xml</node>
+    <node x="379.0" y="243.0">jdk.unsupported</node>
+    <node x="0.28623188405794053" y="326.0">jdk.jfr</node>
+    <node x="49.99999999999997" y="409.0">java.datatransfer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="javafx.base" target="javafx.graphics" relationship="REQUIRES_TRANSITIVE">
+      <point x="0.0" y="-14.5" />
+      <point x="91.53623188405794" y="211.0" />
+      <point x="220.24999999999997" y="211.0" />
+      <point x="-39.0" y="14.5" />
+    </edge>
+    <edge source="java.datatransfer" target="java.desktop" relationship="REQUIRES_TRANSITIVE">
+      <point x="0.0" y="-14.5" />
+      <point x="135.99999999999997" y="387.0" />
+      <point x="87.74999999999997" y="387.0" />
+      <point x="87.74999999999997" y="377.0" />
+      <point x="145.28623188405794" y="377.0" />
+      <point x="-33.0" y="14.5" />
+    </edge>
+    <edge source="java.xml" target="java.prefs" relationship="REQUIRES">
+      <point x="25.0" y="-14.5" />
+      <point x="237.53623188405797" y="469.0" />
+      <point x="407.61956521739125" y="469.0" />
+      <point x="407.61956521739125" y="459.0" />
+      <point x="300.0" y="459.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="jdk.jfr" target="javafx.base" relationship="REQUIRES_STATIC">
+      <point x="0.0" y="-14.5" />
+      <point x="46.28623188405794" y="299.0" />
+      <point x="60.53623188405794" y="299.0" />
+      <point x="-31.0" y="14.5" />
+    </edge>
+    <edge source="javafx.base" target="javafx.controls" relationship="REQUIRES_TRANSITIVE">
+      <point x="0.0" y="-14.5" />
+      <point x="91.53623188405794" y="211.0" />
+      <point x="69.33333333333331" y="211.0" />
+      <point x="69.33333333333331" y="139.0" />
+      <point x="78.0" y="139.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="java.desktop" target="javafx.graphics" relationship="REQUIRES">
+      <point x="0.0" y="-14.5" />
+      <point x="178.28623188405794" y="221.0" />
+      <point x="347.91666666666663" y="221.0" />
+      <point x="347.91666666666663" y="211.0" />
+      <point x="298.25" y="211.0" />
+      <point x="39.0" y="14.5" />
+    </edge>
+    <edge source="jdk.unsupported" target="javafx.graphics" relationship="REQUIRES">
+      <point x="0.0" y="-14.5" />
+      <point x="457.0" y="221.0" />
+      <point x="347.91666666666663" y="221.0" />
+      <point x="347.91666666666663" y="211.0" />
+      <point x="298.25" y="211.0" />
+      <point x="39.0" y="14.5" />
+    </edge>
+    <edge source="java.xml" target="javafx.fxml" relationship="REQUIRES">
+      <point x="25.0" y="-14.5" />
+      <point x="237.53623188405797" y="469.0" />
+      <point x="407.61956521739125" y="469.0" />
+      <point x="407.61956521739125" y="459.0" />
+      <point x="545.5" y="459.0" />
+      <point x="545.5" y="139.0" />
+      <point x="522.9166666666666" y="139.0" />
+      <point x="522.9166666666666" y="129.0" />
+      <point x="354.0" y="129.0" />
+      <point x="31.0" y="14.5" />
+    </edge>
+    <edge source="java.xml" target="java.desktop" relationship="REQUIRES_TRANSITIVE">
+      <point x="-25.0" y="-14.5" />
+      <point x="187.53623188405794" y="469.0" />
+      <point x="39.49999999999997" y="469.0" />
+      <point x="39.49999999999997" y="387.0" />
+      <point x="87.74999999999997" y="387.0" />
+      <point x="87.74999999999997" y="377.0" />
+      <point x="145.28623188405794" y="377.0" />
+      <point x="-33.0" y="14.5" />
+    </edge>
+    <edge source="javafx.controls" target="cl.utalca.alumnos.proyecto" relationship="REQUIRES">
+      <point x="0.0" y="-14.5" />
+      <point x="78.0" y="54.0" />
+      <point x="242.99999999999997" y="54.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="java.scripting" target="javafx.fxml" relationship="REQUIRES">
+      <point x="0.0" y="-14.5" />
+      <point x="630.0" y="139.0" />
+      <point x="522.9166666666666" y="139.0" />
+      <point x="522.9166666666666" y="129.0" />
+      <point x="354.0" y="129.0" />
+      <point x="31.0" y="14.5" />
+    </edge>
+    <edge source="java.xml" target="javafx.graphics" relationship="REQUIRES">
+      <point x="25.0" y="-14.5" />
+      <point x="237.53623188405797" y="469.0" />
+      <point x="407.61956521739125" y="469.0" />
+      <point x="407.61956521739125" y="459.0" />
+      <point x="368.5" y="459.0" />
+      <point x="368.5" y="221.0" />
+      <point x="347.91666666666663" y="221.0" />
+      <point x="347.91666666666663" y="211.0" />
+      <point x="298.25" y="211.0" />
+      <point x="39.0" y="14.5" />
+    </edge>
+    <edge source="java.prefs" target="java.desktop" relationship="REQUIRES">
+      <point x="0.0" y="-14.5" />
+      <point x="300.0" y="387.0" />
+      <point x="211.28623188405794" y="387.0" />
+      <point x="33.0" y="14.5" />
+    </edge>
+    <edge source="javafx.fxml" target="cl.utalca.alumnos.proyecto" relationship="REQUIRES">
+      <point x="0.0" y="-14.5" />
+      <point x="323.0" y="54.0" />
+      <point x="242.99999999999997" y="54.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="javafx.graphics" target="javafx.controls" relationship="REQUIRES_TRANSITIVE">
+      <point x="-39.0" y="-14.5" />
+      <point x="220.24999999999997" y="139.0" />
+      <point x="78.0" y="139.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="javafx.graphics" target="javafx.fxml" relationship="REQUIRES">
+      <point x="39.0" y="-14.5" />
+      <point x="298.25" y="139.0" />
+      <point x="522.9166666666666" y="139.0" />
+      <point x="522.9166666666666" y="129.0" />
+      <point x="354.0" y="129.0" />
+      <point x="31.0" y="14.5" />
+    </edge>
+    <edge source="java.desktop" target="javafx.base" relationship="REQUIRES">
+      <point x="0.0" y="-14.5" />
+      <point x="178.28623188405794" y="299.0" />
+      <point x="122.53623188405794" y="299.0" />
+      <point x="31.0" y="14.5" />
+    </edge>
+    <edge source="javafx.base" target="javafx.fxml" relationship="REQUIRES_TRANSITIVE">
+      <point x="0.0" y="-14.5" />
+      <point x="91.53623188405794" y="211.0" />
+      <point x="129.66666666666663" y="211.0" />
+      <point x="129.66666666666663" y="129.0" />
+      <point x="292.0" y="129.0" />
+      <point x="-31.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="352.0" y="259.5" />
+  <SelectedNodes>
+    <node>cl.utalca.alumnos.proyecto</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+</Diagram>
+
