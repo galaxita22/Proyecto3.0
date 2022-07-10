@@ -15,9 +15,11 @@ public class ReDraw {
 				Operators.draw(text.get(i), gc, posX, posY);
 			}
 			else if (Objects.equals(text.get(i), "/")) {
+				posY += 60;
 				Division.dibujaDivision(text, gc, posX, posY);
-				posY+= 60;
-				Division.dibujaDivision(text, gc, posX, posY);
+				//posY+= 60;
+				//posX -= 60;
+				//Division.dibujaDivision(text, gc, posX, posY);
 			}
 			else {
 				int num = Integer.parseInt(text.get(i));

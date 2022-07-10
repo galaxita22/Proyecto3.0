@@ -16,12 +16,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import java.math.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class Controller implements Initializable {
 	private static int posX, posY;
@@ -42,6 +41,7 @@ public class Controller implements Initializable {
 
 	@FXML
 	public Canvas canvas;
+
 	@FXML
 	public Canvas canvasCoordenadas;
 
@@ -56,6 +56,40 @@ public class Controller implements Initializable {
 	@FXML
 	Button Scientific;
 
+	public void ClickResult(ActionEvent event){//comprobar parentesis abiertos y cerrados *raiz*
+		int cont = 0;
+		for(String elemento: text){
+			if(elemento.equals("Cos")){
+				int contAux = cont+2;
+				StringBuilder sb = new StringBuilder();
+				for (int i = contAux; i < text.size(); i++) {
+					if (text.get(i).equals(")")){
+						break;
+					}
+					sb.append(text.get(i));
+				}
+				System.out.println(sb.toString());
+				ResolverSimple(sb.toString());
+			}
+
+			if(elemento.equals("Sin"))
+				System.out.println(cont);
+			if(elemento.equals("Tan"))
+				System.out.println(cont);
+			cont++;
+		}
+
+
+	}
+
+	public int ResolverSimple(String operacion){
+		//5+5-2
+		if(operacion.contains("+")){
+			String[] split = operacion.split("[-+*/]");
+		}
+		return 0;
+	}
+
 	public void ClickDraw(ActionEvent draw){
 		String Dibuja = textInput.getText();
 		ArrayList<String> Dibuja2 = new ArrayList<>();
@@ -69,7 +103,6 @@ public class Controller implements Initializable {
 				Dibuja2.add(Dibuja.substring(i, i+1));
 				text.add(Dibuja.substring(i, i+1));
 			}
-
 			ReDraw.reDraw(Dibuja2, gc, 0, posY);
 		}
 		System.out.println(Dibuja2);
@@ -100,7 +133,6 @@ public class Controller implements Initializable {
 
 			posX = 0;
 			posY = 0;
-
 
 			ReDraw.reDraw(text, gc, posX, posY);
 
@@ -386,6 +418,9 @@ public class Controller implements Initializable {
 				Operators.draw("x!", gc, posX, posY);
 				posX += 15;
 				posY = 0;
+			}
+			case "√" -> {
+
 			}
 		}
 	}

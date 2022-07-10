@@ -10,13 +10,13 @@ public class Draw {
 
     /*dibujos para num y oper
 //    la altura está entre 100 y 140*/
-//    public static double size, sizeY;
-//    public static void setSize(double size) {
-//        Draw.size = size;
-//    }
-//    public static void setSizeY(double sizeY) {
-//        Draw.sizeY = sizeY;
-//    }
+    public static double size, sizeY;
+    public static void setSize(double size) {
+        Draw.size = size;
+    }
+    public static void setSizeY(double sizeY) {
+        Draw.sizeY = sizeY;
+    }
 
     public static void drawNum(GraphicsContext gc, int posX, int posY, String[] numbers) {
         gc.beginPath();
