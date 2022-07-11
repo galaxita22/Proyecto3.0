@@ -157,6 +157,11 @@
                         <Glow />
                     </effect>
                 </Canvas>
+              <Button layoutX="468.0" layoutY="248.0" mnemonicParsing="false" onAction="#ClickResult" prefHeight="53.0" prefWidth="40.0" styleClass="root5" text="=" textFill="WHITE">
+                  <font>
+                      <Font name="System Bold" size="14.0" />
+                  </font>
+              </Button>
             </children></Pane>
         <Button layoutX="31.0" layoutY="346.0" mnemonicParsing="false" onAction="#ClickBorrarTodo" prefHeight="44.0" prefWidth="222.0" styleClass="root3" text="CE" textFill="WHITE" AnchorPane.bottomAnchor="50.0">
             <font>
