@@ -60,6 +60,14 @@ public class Operators extends Draw {
 				String[] coordsComa = {"sA 7.5 140 5 5 0 360 OPEN"};
 				drawOper(gc, posX, posY, coordsComa);
 			}
+			case "√" -> {
+				String[] coords = {"mT 5 125", "lT 10 145", "lT 20 85", "lT 50 85"};
+				drawOper(gc, posX, posY, coords);
+			}
+			case "_" -> {
+				String[] coordsR = {"mT 0 85", "lT 30 85"};
+				drawOper(gc, posX, posY, coordsR);
+			}
 			default -> {
 			}
 		}

@@ -30,7 +30,7 @@ public class Controller implements Initializable {
 
 	@FXML
 	private TextField textInput;
-	public int statusA = 2, statusB = 2, statusResult = 0, statusParentesis = 0, posXDenominador, posXNumerador, PAdiv, PCdiv;
+	public int statusA = 2, statusB = 2, statusResult = 0, statusParentesis = 0, posXDenominador, posXNumerador, PAr = 0, PCr = 0, CtrlRaiz;
 	public ArrayList<String> text = new ArrayList<>();
 	public ArrayList<String> Resultados = new ArrayList<>();
 	//StatusA = evitar poner 2 operadores seguidos
@@ -301,6 +301,10 @@ public class Controller implements Initializable {
 				Operators.draw("/", gc, posX, posY + 60);
 			}
 		}
+		if (CtrlRaiz > 0) {
+			Operators.draw( "_", gc, posX, posY);
+			System.out.println(CtrlRaiz);
+		}
 //		switch (this.size) {
 //			case "MP":
 //				Draw.setSize(0.25);
@@ -391,6 +395,31 @@ public class Controller implements Initializable {
 		statusParentesis++;
 		statusResult = 0;
 
+		if (CtrlRaiz > 0){
+			for (int i = text.size()-1; i >= 0; i--) {
+				if(text.get(i).equals("√") && PCr ==0 && PAr ==0){
+					CtrlRaiz -= 1;
+					break;
+				}
+				if (text.get(i).equals(")")){
+					PCr += 1;
+				}
+				if (text.get(i).equals("(")){
+					PAr += 1;
+					if (PAr == PCr){
+						CtrlRaiz -= 1;
+						if(CtrlRaiz == 0){
+							PAr = PCr = 0;
+							break;
+						}
+					}
+				}
+			}
+			if (CtrlRaiz > 0) {
+				Operators.draw( "_", gc, posX, posY);
+			}
+		}
+
 		switch (operador) {
 			case "Sin" -> {
 				Operators.draw("Sin", gc, posX, posY);
@@ -415,7 +444,10 @@ public class Controller implements Initializable {
 				posY = 0;
 			}
 			case "√" -> {
-
+				Operators.draw("√", gc, posX, posY);
+				posX += 15;
+				posY = 0;
+				CtrlRaiz += 1;
 			}
 		}
 	}
@@ -428,6 +460,31 @@ public class Controller implements Initializable {
 			statusB = statusA;
 			statusA = 2;
 			statusResult = 1;
+
+			if (CtrlRaiz > 0){
+				for (int i = text.size()-1; i >= 0; i--) {
+					if(text.get(i).equals("√") && PCr ==0 && PAr ==0){
+						CtrlRaiz -= 1;
+						break;
+					}
+					if (text.get(i).equals(")")){
+						PCr += 1;
+					}
+					if (text.get(i).equals("(")){
+						PAr += 1;
+						if (PAr == PCr){
+							CtrlRaiz -= 1;
+							if(CtrlRaiz == 0){
+								PAr = PCr = 0;
+								break;
+							}
+						}
+					}
+				}
+				if (CtrlRaiz > 0) {
+					Operators.draw( "_", gc, posX, posY);
+				}
+			}
 
 //			switch (this.size) {
 //				case "MP":
