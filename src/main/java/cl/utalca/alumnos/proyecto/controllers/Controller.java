@@ -4,7 +4,6 @@ import cl.utalca.alumnos.proyecto.Main;
 import cl.utalca.alumnos.proyecto.controllers.helper.Division;
 import cl.utalca.alumnos.proyecto.controllers.helper.ReDraw;
 import cl.utalca.alumnos.proyecto.functions.Coords.Coords;
-import cl.utalca.alumnos.proyecto.functions.Draw;
 import cl.utalca.alumnos.proyecto.functions.numbers.Numbers;
 import cl.utalca.alumnos.proyecto.functions.operators.Operators;
 import javafx.event.ActionEvent;
@@ -16,11 +15,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import java.math.*;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 	private static int posX, posY;
@@ -41,7 +42,6 @@ public class Controller implements Initializable {
 
 	@FXML
 	public Canvas canvas;
-
 	@FXML
 	public Canvas canvasCoordenadas;
 
@@ -56,52 +56,41 @@ public class Controller implements Initializable {
 	@FXML
 	Button Scientific;
 
-	public void ClickResult(ActionEvent event){//comprobar parentesis abiertos y cerrados *raiz*
-		int cont = 0;
-		for(String elemento: text){
-			if(elemento.equals("Cos")){
-				int contAux = cont+2;
-				StringBuilder sb = new StringBuilder();
-				for (int i = contAux; i < text.size(); i++) {
-					if (text.get(i).equals(")")){
-						break;
-					}
-					sb.append(text.get(i));
-				}
-				System.out.println(sb.toString());
-				ResolverSimple(sb.toString());
+	public void ClickResult(ActionEvent event) {
+		StringBuilder sb = new StringBuilder();
+
+		for (String s : text) {
+			switch (s) {
+				case "Cos" -> sb.append("cos");
+				case "Sin" -> sb.append("sin");
+				case "Tan" -> sb.append("tan");
+				case "√" -> sb.append("sqrt");
+				default -> sb.append(s);
 			}
-
-			if(elemento.equals("Sin"))
-				System.out.println(cont);
-			if(elemento.equals("Tan"))
-				System.out.println(cont);
-			cont++;
 		}
 
+		Expression expression = new ExpressionBuilder(sb.toString()).build();
+		double result = expression.evaluate();
+		String ResultAux = String.valueOf(result);
+		System.out.println(ResultAux);
+		for(int i = 0; i < ResultAux.length(); i++){
 
-	}
-
-	public int ResolverSimple(String operacion){
-		//5+5-2
-		if(operacion.contains("+")){
-			String[] split = operacion.split("[-+*/]");
 		}
-		return 0;
+
+		System.out.println(result);
 	}
 
-	public void ClickDraw(ActionEvent draw){
+	public void ClickDraw(ActionEvent draw) {
 		String Dibuja = textInput.getText();
 		ArrayList<String> Dibuja2 = new ArrayList<>();
 		for (int i = 0; i <= Dibuja.length(); i++) {
-			if (Dibuja.substring(i, i+1).equals("C")){
+			if (Dibuja.substring(i, i + 1).equals("C")) {
 				Dibuja2.add("Cos");
 				text.add("Cos");
 				i += 3;
-			}
-			else{
-				Dibuja2.add(Dibuja.substring(i, i+1));
-				text.add(Dibuja.substring(i, i+1));
+			} else {
+				Dibuja2.add(Dibuja.substring(i, i + 1));
+				text.add(Dibuja.substring(i, i + 1));
 			}
 			ReDraw.reDraw(Dibuja2, gc, 0, posY);
 		}
@@ -199,7 +188,7 @@ public class Controller implements Initializable {
 		}
 	}
 
-	public void ClickSize(ActionEvent size){
+	public void ClickSize(ActionEvent size) {
 //		this.size = ((Button) size.getSource()).getText();
 //		switch (this.size) {
 //			case "MP":
@@ -233,12 +222,12 @@ public class Controller implements Initializable {
 
 	public void ClickCambioCientifica(ActionEvent cambioescena) throws IOException {
 		Main.cambiarEscena("Scientific");
-		posX =0;
+		posX = 0;
 	}
 
 	public void ClickCambioEstandar(ActionEvent cambioescena) throws IOException {
 		Main.cambiarEscena("Standard");
-		posX=0;
+		posX = 0;
 	}
 
 	public void ClickCambioColor(ActionEvent cambiocolor) {
@@ -278,11 +267,11 @@ public class Controller implements Initializable {
 			posX = 0;
 			for (int i = 0; i < text.size(); i++) {
 				Coords.DrawCoord(text.get(i), gcCoordenadas, posX, posY);
-				if (text.get(i).equals("Sin") || text.get(i).equals("Cos") || text.get(i).equals("Tan")){
-				posX += 80;
-				ContCoord++;}
-				else{
-					posX+=30;
+				if (text.get(i).equals("Sin") || text.get(i).equals("Cos") || text.get(i).equals("Tan")) {
+					posX += 80;
+					ContCoord++;
+				} else {
+					posX += 30;
 					ContCoord++;
 
 				}
@@ -300,10 +289,10 @@ public class Controller implements Initializable {
 		statusB = statusA;
 		statusA = 1;
 
-		if(posY != 0){
-			posXDenominador +=30;
-			if(posXDenominador > posXNumerador){
-				Operators.draw("/", gc, posX, posY+60);
+		if (posY != 0) {
+			posXDenominador += 30;
+			if (posXDenominador > posXNumerador) {
+				Operators.draw("/", gc, posX, posY + 60);
 			}
 		}
 //		switch (this.size) {
@@ -389,25 +378,24 @@ public class Controller implements Initializable {
 		}
 	}
 
-	public void ClickTrigonometrica(ActionEvent trig){
+	public void ClickTrigonometrica(ActionEvent trig) {
 		String operador = ((Button) trig.getSource()).getText();
 		textInput.setText(textInput.getText() + operador);
 		text.add(operador);
-		statusParentesis ++;
+		statusParentesis++;
 
-		switch(operador){
+		switch (operador) {
 			case "Sin" -> {
 				Operators.draw("Sin", gc, posX, posY);
-				posX+=80;
+				posX += 80;
 			}
 			case "Cos" -> {
 				Operators.draw("Cos", gc, posX, posY);
-				posX+=80;
-				System.out.println(text);
+				posX += 80;
 			}
 			case "Tan" -> {
 				Operators.draw("Tan", gc, posX, posY);
-				posX+=90;
+				posX += 90;
 			}
 			case "-" -> {
 				Operators.draw("-", gc, posX, posY);
@@ -426,7 +414,7 @@ public class Controller implements Initializable {
 	}
 
 	public void ClickOperadores(ActionEvent oper) {
-		if (statusA != 2 ) {
+		if (statusA != 2) {
 			String operador = ((Button) oper.getSource()).getText();
 			textInput.setText(textInput.getText() + operador);
 			text.add(operador);
@@ -471,21 +459,21 @@ public class Controller implements Initializable {
 					this.posX = Division.dibujaDivision(text, gc, posX, posY);//this.posX = posX2; se utiliza para que el operador se dibuje en la misma linea que la division
 					System.out.println(posX);
 					int posXNumerador = posX;
-					posXNumerador =posXDenominador - posXNumerador;
+					posXNumerador = posXDenominador - posXNumerador;
 				}
 				case "°" -> {
 					Operators.draw("°", gc, posX, posY);
-					posX +=15;
+					posX += 15;
 				}
 			}
 		}
-			if(posY > 0){
-			posXDenominador +=30;
-				if(posXDenominador > posXNumerador){
-					Operators.draw("/", gc, posX, posY +60);
-				}
+		if (posY > 0) {
+			posXDenominador += 30;
+			if (posXDenominador > posXNumerador) {
+				Operators.draw("/", gc, posX, posY + 60);
 			}
 		}
+	}
 
 	public void ClickPrimerParentesis(ActionEvent par) {
 		String parentesis = ((Button) par.getSource()).getText();

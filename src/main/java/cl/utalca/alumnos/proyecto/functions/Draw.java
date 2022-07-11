@@ -41,7 +41,7 @@ public class Draw {
 
     public static void drawOper(GraphicsContext gc, int posX, int posY, String[] operators) {
         gc.beginPath();
-        Color color = Controller.getColorOp();
+        Color colorOp = Controller.getColorOp();
 
         // lT AA BB -> lineTo(AA,BB)
         // mT AA BB -> moveTo(AA,BB)
@@ -67,7 +67,7 @@ public class Draw {
             }
         }
 
-        gc.setStroke(color);
+        gc.setStroke(colorOp);
         gc.stroke();
 
     }

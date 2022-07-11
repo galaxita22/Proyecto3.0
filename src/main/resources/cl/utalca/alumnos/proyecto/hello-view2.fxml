@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="848.0" stylesheets="@../../../../cl/utalca/alumnos/proyecto/Design.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.utalca.alumnos.proyecto.controllers.Controller">
     <children>
-        <TextField fx:id="textInput" layoutX="29.0" layoutY="119.0" prefHeight="30.0" prefWidth="190.0">
+        <TextField fx:id="textInput" layoutX="30.0" layoutY="83.0" prefHeight="30.0" prefWidth="190.0" AnchorPane.bottomAnchor="290.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="628.0">
             <font>
                 <Font size="14.0" />
             </font>
@@ -19,7 +19,7 @@
             </cursor></TextField>
         <GridPane layoutX="30.0" layoutY="154.0" prefHeight="191.0" prefWidth="255.0">
             <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -123,139 +123,142 @@
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-            <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="53.0" prefWidth="51.2" styleClass="root2" text="°" textFill="WHITE" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Consolas Bold" size="17.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="53.0" prefWidth="52.0" styleClass="root2" text="!" textFill="WHITE" GridPane.rowIndex="2">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="Consolas Bold" size="20.0" />
-               </font></Button>
-            <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="136.0" prefWidth="51.0" styleClass="root2" text="^" textFill="WHITE" GridPane.rowIndex="1">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="132.0" prefWidth="51.0" styleClass="root2" text="Sin" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="126.0" prefWidth="51.0" styleClass="root2" text="Cos" textFill="WHITE" GridPane.columnIndex="1">
-               <font>
-                  <Font name="Consolas Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="96.0" prefWidth="51.0" styleClass="root2" text="Tan" textFill="WHITE" GridPane.columnIndex="2">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font></Button>
-            <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="53.0" prefWidth="55.0" styleClass="root2" text="√" textFill="WHITE" GridPane.columnIndex="3">
-               <font>
-                  <Font name="Consolas Bold" size="14.0" />
-               </font></Button>
+                <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="53.0" prefWidth="51.2" styleClass="root2" text="°" textFill="WHITE" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="Consolas Bold" size="17.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor></Button>
+                <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="53.0" prefWidth="52.0" styleClass="root2" text="!" textFill="WHITE" GridPane.rowIndex="2">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <font>
+                        <Font name="Consolas Bold" size="20.0" />
+                    </font></Button>
+                <Button mnemonicParsing="false" onAction="#ClickOperadores" prefHeight="136.0" prefWidth="51.0" styleClass="root2" text="^" textFill="WHITE" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor></Button>
+                <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="132.0" prefWidth="51.0" styleClass="root2" text="Sin" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor></Button>
+                <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="126.0" prefWidth="51.0" styleClass="root2" text="Cos" textFill="WHITE" GridPane.columnIndex="1">
+                    <font>
+                        <Font name="Consolas Bold" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor></Button>
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="96.0" prefWidth="51.0" styleClass="root2" text="Tan" textFill="WHITE" GridPane.columnIndex="2">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Button>
+                <Button mnemonicParsing="false" onAction="#ClickTrigonometrica" prefHeight="53.0" prefWidth="55.0" styleClass="root2" text="√" textFill="WHITE" GridPane.columnIndex="3">
+                    <font>
+                        <Font name="Consolas Bold" size="14.0" />
+                    </font></Button>
             </children>
         </GridPane>
-          <Canvas id="canvas" fx:id="canvas" height="314.0" layoutX="298.0" layoutY="84.0" style="-fx-background-color: #bcbcbc;" width="522.0" AnchorPane.bottomAnchor="42.39999999999998" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="83.60000000000002">
-              <effect>
-                  <Glow />
-              </effect>
-          </Canvas>
-      <Canvas fx:id="canvasCoordenadas" height="314.0" layoutX="298.0" layoutY="84.0" style="-fx-background-color: #FFFFFF;" width="522.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="297.6" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="83.60000000000002" />
-      <Button layoutX="760.0" layoutY="319.0" mnemonicParsing="false" onAction="#ClickResult" prefHeight="53.0" prefWidth="40.0" styleClass="root5" text="=" textFill="WHITE" AnchorPane.bottomAnchor="67.39999999999998" AnchorPane.leftAnchor="760.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="319.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-          <Button layoutX="132.0" layoutY="345.0" mnemonicParsing="false" onAction="#ClickNumero" prefHeight="52.8" prefWidth="51.2" style="-fx-background-color: #5b5b5b;" text="0" textFill="WHITE">
-              <font>
-                  <Font name="System Bold" size="20.0" />
-              </font>
-              <cursor>
-                  <Cursor fx:constant="HAND" />
-              </cursor>
-      </Button>
-          <Button layoutX="81.0" layoutY="345.0" mnemonicParsing="false" onAction="#ClickSegundoParentesis" prefHeight="52.8" prefWidth="51.2" style="-fx-background-color: #7b7b7b;" text=")" textFill="WHITE">
-              <font>
-                  <Font name="System Bold" size="20.0" />
-              </font>
-              <cursor>
-                  <Cursor fx:constant="HAND" />
-              </cursor>
-      </Button>
-        <Button layoutX="184.0" layoutY="346.0" mnemonicParsing="false" onAction="#ClickBorrarTodo" prefHeight="52.8" prefWidth="102.4" styleClass="root3" text="CE" textFill="WHITE">
+        <Pane layoutX="298.0" layoutY="83.0" prefHeight="313.0" prefWidth="522.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <Canvas fx:id="canvasCoordenadas" height="314.0" width="522.0" />
+                <Canvas id="canvas" fx:id="canvas" height="314.0" style="-fx-background-color: #bcbcbc;" width="522.0">
+                    <effect>
+                        <Glow />
+                    </effect>
+                </Canvas>
+                <Button layoutX="469.0" layoutY="247.0" mnemonicParsing="false" onAction="#ClickResult" prefHeight="53.0" prefWidth="40.0" styleClass="root5" text="=" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children></Pane>
+        <Button layoutX="132.0" layoutY="345.0" mnemonicParsing="false" onAction="#ClickNumero" prefHeight="52.8" prefWidth="51.2" style="-fx-background-color: #5b5b5b;" text="0" textFill="WHITE" AnchorPane.bottomAnchor="43.0">
             <font>
                 <Font name="System Bold" size="20.0" />
             </font>
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
-      </Button>
-          <Button layoutX="30.0" layoutY="345.0" mnemonicParsing="false" onAction="#ClickPrimerParentesis" prefHeight="52.8" prefWidth="51.2" style="-fx-background-color: #7b7b7b;" text="(" textFill="WHITE">
-              <font>
-                  <Font name="System Bold" size="20.0" />
-              </font>
-              <cursor>
-                  <Cursor fx:constant="HAND" />
-              </cursor>
-      </Button>
-      <Button fx:id="Standard" layoutX="30.0" layoutY="45.0" mnemonicParsing="false" onAction="#ClickCambioEstandar" prefHeight="30.0" prefWidth="76.0" text="Standard" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-         <font>
-            <Font name="Consolas" size="12.0" />
-         </font></Button>
-      <ColorPicker fx:id="ColorPickerNumber" layoutX="132.0" layoutY="84.0" onAction="#ClickCambioColor" prefHeight="30.0" prefWidth="84.0">
-         <value>
-            <Color />
-         </value></ColorPicker>
-      <Button layoutX="298.0" layoutY="48.0" mnemonicParsing="false" onAction="#ClickCoordenadas" prefHeight="26.0" prefWidth="64.0" text="Coords" AnchorPane.topAnchor="48.0">
-         <font>
-            <Font name="Consolas" size="12.0" />
-         </font></Button>
-      <ColorPicker fx:id="ColorPickerOperator" layoutX="29.0" layoutY="84.0" onAction="#ClickCambioColor" prefHeight="30.0" prefWidth="85.0">
-         <value>
-            <Color />
-         </value>
-      </ColorPicker>
-      <Label alignment="CENTER" layoutX="132.0" layoutY="61.0" prefHeight="18.0" prefWidth="84.0" text="Números" textFill="WHITE">
-         <font>
-            <Font name="Consolas Bold" size="15.0" />
-         </font></Label>
-      <Label alignment="CENTER" layoutX="30.0" layoutY="61.0" prefHeight="18.0" prefWidth="84.0" text="Operadores" textFill="WHITE">
-         <font>
-            <Font name="Consolas Bold" size="15.0" />
-         </font></Label>
-        <Button layoutX="701.0" layoutY="47.0" mnemonicParsing="false" onAction="#ClickCambioBase" prefHeight="26.0" prefWidth="118.0" text="Cambio de base">
+        </Button>
+        <Button layoutX="81.0" layoutY="345.0" mnemonicParsing="false" onAction="#ClickSegundoParentesis" prefHeight="52.8" prefWidth="51.2" style="-fx-background-color: #7b7b7b;" text=")" textFill="WHITE" AnchorPane.bottomAnchor="42.19999999999999">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button layoutX="184.0" layoutY="346.0" mnemonicParsing="false" onAction="#ClickBorrarTodo" prefHeight="52.8" prefWidth="102.4" styleClass="root3" text="CE" textFill="WHITE" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="562.0" AnchorPane.topAnchor="346.0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button layoutX="30.0" layoutY="345.0" mnemonicParsing="false" onAction="#ClickPrimerParentesis" prefHeight="52.8" prefWidth="51.2" style="-fx-background-color: #7b7b7b;" text="(" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="Standard" layoutX="30.0" layoutY="45.0" mnemonicParsing="false" onAction="#ClickCambioEstandar" prefHeight="30.0" prefWidth="76.0" text="Standard" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font name="Consolas" size="12.0" />
+            </font></Button>
+        <ColorPicker fx:id="ColorPickerNumber" layoutX="120.0" layoutY="84.0" onAction="#ClickCambioColor" prefHeight="30.0" prefWidth="84.0" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="628.0">
+            <value>
+                <Color />
+            </value></ColorPicker>
+        <Button layoutX="298.0" layoutY="49.0" mnemonicParsing="false" onAction="#ClickCoordenadas" prefHeight="26.0" prefWidth="64.0" text="Coords">
+            <font>
+                <Font name="Consolas" size="12.0" />
+            </font></Button>
+        <ColorPicker fx:id="ColorPickerOperator" layoutX="21.0" layoutY="95.0" onAction="#ClickCambioColor" prefHeight="30.0" prefWidth="85.0" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="30.0">
+            <value>
+                <Color />
+            </value>
+        </ColorPicker>
+        <Label alignment="CENTER" layoutX="121.0" layoutY="60.0" prefHeight="18.0" prefWidth="84.0" text="Números" textFill="WHITE" AnchorPane.bottomAnchor="362.0">
+            <font>
+                <Font name="Consolas Bold" size="15.0" />
+            </font></Label>
+        <Label alignment="CENTER" layoutX="30.0" layoutY="61.0" prefHeight="18.0" prefWidth="84.0" text="Operadores" textFill="WHITE" AnchorPane.bottomAnchor="362.0">
+            <font>
+                <Font name="Consolas Bold" size="15.0" />
+            </font></Label>
+        <Button layoutX="701.0" layoutY="38.0" mnemonicParsing="false" onAction="#ClickCambioBase" prefHeight="26.0" prefWidth="118.0" text="Cambio de base" AnchorPane.bottomAnchor="364.0">
             <font>
                 <Font name="Consolas" size="13.0" />
             </font>
         </Button>
-        <Button layoutX="417.0" layoutY="49.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="MP" />
-        <Button layoutX="468.0" layoutY="48.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="P" />
-        <Button layoutX="519.0" layoutY="48.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="N" />
-        <Button layoutX="570.0" layoutY="48.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="G" />
-        <Button layoutX="620.0" layoutY="48.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="MG" />
-        <Button layoutX="222.0" layoutY="84.0" mnemonicParsing="false" onAction="#ClickDraw" prefHeight="30.0" prefWidth="64.0" styleClass="root5" text="Draw" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Button>
-      <Button layoutX="222.0" layoutY="119.0" mnemonicParsing="false" onAction="#ClickBorrar" prefHeight="30.0" prefWidth="64.0" styleClass="root3" text="DEL" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Button>
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="MP" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="390.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="P" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="340.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="N" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="290.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="G" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="240.0" />
+        <Button layoutX="372.6" layoutY="41.0" mnemonicParsing="false" onAction="#ClickSize" prefHeight="26.0" prefWidth="40.0" text="MG" AnchorPane.bottomAnchor="364.0" AnchorPane.rightAnchor="190.0" />
+        <Button layoutX="219.0" layoutY="75.0" mnemonicParsing="false" onAction="#ClickDraw" prefHeight="30.0" prefWidth="64.0" styleClass="root5" text="Draw" textFill="WHITE" AnchorPane.bottomAnchor="325.0" AnchorPane.rightAnchor="562.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Button>
+        <Button layoutX="235.0" layoutY="119.0" mnemonicParsing="false" onAction="#ClickBorrar" prefHeight="30.0" prefWidth="64.0" styleClass="root3" text="DEL" textFill="WHITE" AnchorPane.rightAnchor="562.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Button>
     </children>
 </AnchorPane>

@@ -43,7 +43,7 @@ public class Division {
 				posX -= 30;
 			}
 		}
-		else{ 
+		else{
 			while (i >= 0) {
 				if (text.get(i).equals("+") || text.get(i).equals("-") || text.get(i).equals("*")) {
 					posX += 30;
@@ -71,6 +71,6 @@ public class Division {
 			}
 		}
 		posX = posXAux;
-	return posX;
+		return posX;
 	}
 }
