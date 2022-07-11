@@ -4,6 +4,7 @@ import cl.utalca.alumnos.proyecto.Main;
 import cl.utalca.alumnos.proyecto.controllers.helper.Division;
 import cl.utalca.alumnos.proyecto.controllers.helper.ReDraw;
 import cl.utalca.alumnos.proyecto.functions.Coords.Coords;
+import cl.utalca.alumnos.proyecto.functions.Draw;
 import cl.utalca.alumnos.proyecto.functions.numbers.Numbers;
 import cl.utalca.alumnos.proyecto.functions.operators.Operators;
 import javafx.event.ActionEvent;
@@ -21,6 +22,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -28,8 +30,9 @@ public class Controller implements Initializable {
 
 	@FXML
 	private TextField textInput;
-	public int statusA = 2, statusB = 2, statusParentesis = 0, posXDenominador, posXNumerador, PAdiv, PCdiv;
+	public int statusA = 2, statusB = 2, statusResult = 0, statusParentesis = 0, posXDenominador, posXNumerador, PAdiv, PCdiv;
 	public ArrayList<String> text = new ArrayList<>();
+	public ArrayList<String> Resultados = new ArrayList<>();
 	//StatusA = evitar poner 2 operadores seguidos
 	//StatusB = auxiliar de A
 
@@ -57,6 +60,8 @@ public class Controller implements Initializable {
 	Button Scientific;
 
 	public void ClickResult(ActionEvent event) {
+
+		gc.clearRect(0, 0, 515, 313);
 		StringBuilder sb = new StringBuilder();
 
 		for (String s : text) {
@@ -72,12 +77,13 @@ public class Controller implements Initializable {
 		Expression expression = new ExpressionBuilder(sb.toString()).build();
 		double result = expression.evaluate();
 		String ResultAux = String.valueOf(result);
-		System.out.println(ResultAux);
 		for(int i = 0; i < ResultAux.length(); i++){
-
+			Resultados.add(ResultAux.substring(i, i+1));
 		}
+		ReDraw.reDraw(Resultados, gc, 0, posY);
+		Resultados.clear();
 
-		System.out.println(result);
+
 	}
 
 	public void ClickDraw(ActionEvent draw) {
@@ -383,6 +389,7 @@ public class Controller implements Initializable {
 		textInput.setText(textInput.getText() + operador);
 		text.add(operador);
 		statusParentesis++;
+		statusResult = 0;
 
 		switch (operador) {
 			case "Sin" -> {
@@ -420,6 +427,7 @@ public class Controller implements Initializable {
 			text.add(operador);
 			statusB = statusA;
 			statusA = 2;
+			statusResult = 1;
 
 //			switch (this.size) {
 //				case "MP":
